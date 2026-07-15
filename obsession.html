@@ -310,10 +310,90 @@
     .watch { grid-template-columns: repeat(4, 1fr); }
     .related { grid-template-columns: repeat(3, 1fr); }
   }
+
+  /* ===== SHARED SITE CHROME (matches homepage header & footer) ===== */
+  .site-topbar { background:#0a0812; border-bottom:1px solid #302748; font-size:0.82rem; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height:1.6; }
+  .site-topbar .site-shell { display:flex; justify-content:space-between; align-items:center; height:40px; gap:14px; flex-wrap:wrap; }
+  .site-topbar nav { display:flex; gap:18px; }
+  .site-topbar a { color:#a79fc6; text-decoration:none; }
+  .site-topbar a:hover { color:#f6c453; text-decoration:none; }
+  .site-topbar .greet { color:#a79fc6; }
+
+  .site-shell { width:100%; max-width:1200px; margin:0 auto; padding:0 20px; }
+
+  .site-header { position:sticky; top:0; z-index:50; background:rgba(14,11,24,0.92); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid #302748; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  .site-bar { display:flex; align-items:center; justify-content:space-between; height:66px; gap:16px; }
+  .site-logo { display:flex; align-items:center; gap:10px; font-weight:800; font-size:1.25rem; letter-spacing:-0.02em; color:#f2effa; text-decoration:none; }
+  .site-logo:hover { text-decoration:none; }
+  .site-logo .dot { width:30px; height:30px; border-radius:9px; background:linear-gradient(135deg,#8b5cf6,#ec4899); display:inline-flex; align-items:center; justify-content:center; color:#fff; font-size:0.95rem; }
+  .site-logo b { color:#f6c453; }
+  .site-primary { display:flex; align-items:center; gap:4px; }
+  .site-primary a { color:#a79fc6; font-size:0.92rem; font-weight:500; padding:8px 12px; border-radius:9px; text-decoration:none; }
+  .site-primary a:hover { color:#f2effa; background:#1b1630; text-decoration:none; }
+  .site-menu-toggle, .site-menu-btn { display:none; }
+  .site-menu-btn { width:44px; height:40px; border-radius:10px; border:1px solid #302748; background:#1b1630; cursor:pointer; align-items:center; justify-content:center; flex-direction:column; gap:4px; }
+  .site-menu-btn span { width:20px; height:2px; background:#f2effa; border-radius:2px; }
+
+  .site-footer { margin-top:40px; background:#0a0812; border-top:1px solid #302748; padding:44px 0 30px; color:#a79fc6; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height:1.6; }
+  .site-foot-grid { display:grid; grid-template-columns:1fr; gap:28px; }
+  .site-foot-col h4 { font-size:0.85rem; text-transform:uppercase; letter-spacing:0.08em; color:#f6c453; margin:0 0 12px; }
+  .site-foot-col a { display:block; color:#a79fc6; font-size:0.9rem; padding:4px 0; text-decoration:none; }
+  .site-foot-col a:hover { color:#f2effa; text-decoration:none; }
+  .site-foot-col p { color:#a79fc6; font-size:0.9rem; margin:0; }
+  .site-foot-bottom { border-top:1px solid #302748; margin-top:30px; padding-top:20px; color:#a79fc6; font-size:0.82rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+
+  @media (max-width:860px) {
+    .site-primary { position:fixed; inset:106px 0 auto 0; flex-direction:column; align-items:stretch; gap:2px; background:#141022; border-bottom:1px solid #302748; padding:12px 20px 20px; transform:translateY(-140%); transition:transform 0.25s ease; box-shadow:0 20px 40px rgba(0,0,0,0.5); z-index:49; }
+    .site-primary a { padding:12px; border-radius:10px; }
+    .site-menu-toggle:checked ~ .site-primary { transform:translateY(0); }
+    .site-menu-btn { display:flex; }
+  }
+  @media (min-width:980px) {
+    .site-foot-grid { grid-template-columns:1.4fr 1fr 1fr 1fr; }
+  }
 </style>
 </head>
 
 <body>
+
+<!-- ===== SHARED SITE CHROME: SECONDARY MENU ===== -->
+<div class="site-topbar">
+  <div class="site-shell">
+    <span class="greet">Your premium entertainment knowledge base</span>
+    <nav aria-label="Secondary menu">
+      <a href="/about-us">About Us</a>
+      <a href="/contact-us">Contact Us</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/disclaimer">Disclaimer</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ===== SHARED SITE CHROME: PRIMARY MENU ===== -->
+<header class="site-header">
+  <div class="site-shell">
+    <div class="site-bar">
+      <a class="site-logo" href="/">
+        <span class="dot">CD</span>
+        <span>Celeb<b>Dossier</b></span>
+      </a>
+      <input type="checkbox" id="site-menu-toggle" class="site-menu-toggle" hidden>
+      <nav class="site-primary" aria-label="Primary menu">
+        <a href="/actors">Actors</a>
+        <a href="/actresses">Actresses</a>
+        <a href="/directors">Directors</a>
+        <a href="/producers">Producers</a>
+        <a href="/writers">Writers</a>
+        <a href="/movies">Movies</a>
+        <a href="/television">Television</a>
+        <a href="/awards">Awards</a>
+      </nav>
+      <label for="site-menu-toggle" class="site-menu-btn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+  </div>
+</header>
 
 <!-- ===== CINEMATIC HERO ===== -->
 <header class="stage">
@@ -588,9 +668,42 @@
 
 </main>
 
-<footer class="site">
-  <div class="container">
-    <p>CelebDossier.com &middot; Evergreen celebrity profiles, movie pages, and entertainment guides.</p>
+<!-- ===== SHARED SITE CHROME: FOOTER ===== -->
+<footer class="site-footer">
+  <div class="site-shell">
+    <div class="site-foot-grid">
+      <div class="site-foot-col">
+        <a class="site-logo" href="/" style="margin-bottom:12px;">
+          <span class="dot">CD</span><span>Celeb<b>Dossier</b></span>
+        </a>
+        <p>An original entertainment knowledge base. Evergreen biographies, movie pages, TV guides, and award coverage, written to stay useful for years.</p>
+      </div>
+      <div class="site-foot-col">
+        <h4>Categories</h4>
+        <a href="/actors">Actors</a>
+        <a href="/actresses">Actresses</a>
+        <a href="/directors">Directors</a>
+        <a href="/producers">Producers</a>
+        <a href="/writers">Writers</a>
+      </div>
+      <div class="site-foot-col">
+        <h4>Explore</h4>
+        <a href="/movies">Movies</a>
+        <a href="/television">Television</a>
+        <a href="/awards">Awards</a>
+      </div>
+      <div class="site-foot-col">
+        <h4>Company</h4>
+        <a href="/about-us">About Us</a>
+        <a href="/contact-us">Contact Us</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/disclaimer">Disclaimer</a>
+      </div>
+    </div>
+    <div class="site-foot-bottom">
+      <span>&copy; 2026 CelebDossier.com. All rights reserved.</span>
+      <span>Made for entertainment fans worldwide.</span>
+    </div>
   </div>
 </footer>
 
