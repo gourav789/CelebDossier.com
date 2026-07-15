@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CelebDossier — Celebrity Biographies, Movies, TV Shows & Awards</title>
+<meta name="description" content="CelebDossier is your premium entertainment knowledge base. Explore original biographies of actors, actresses, directors, producers, and writers, plus movie, TV, and award guides.">
+<link rel="canonical" href="https://celebdossier.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="CelebDossier — The Entertainment Knowledge Base">
+<meta property="og:description" content="Original, evergreen celebrity profiles, movie pages, TV show guides, and award coverage.">
+<meta property="og:url" content="https://celebdossier.com/">
+<meta property="og:image" content="https://celebdossier.com/images/celebdossier-cover.jpg">
+
+<style>
+  :root {
+    --bg: #0e0b18;
+    --bg-2: #141022;
+    --surface: #1b1630;
+    --surface-2: #241d3d;
+    --line: #302748;
+    --text: #f2effa;
+    --muted: #a79fc6;
+    --brand: #8b5cf6;
+    --brand-2: #ec4899;
+    --gold: #f6c453;
+    --radius: 16px;
+    --maxw: 1200px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+  .visually-hidden {
+    position: absolute !important; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0);
+    white-space: nowrap; border: 0;
+  }
+
+  /* ---------- TOP (SECONDARY) BAR ---------- */
+  .topbar {
+    background: #0a0812;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.82rem;
+  }
+  .topbar .wrap { display: flex; justify-content: space-between; align-items: center; height: 40px; gap: 14px; flex-wrap: wrap; }
+  .topbar nav { display: flex; gap: 18px; }
+  .topbar a { color: var(--muted); }
+  .topbar a:hover { color: var(--gold); }
+  .topbar .greet { color: var(--muted); }
+
+  /* ---------- HEADER + PRIMARY NAV ---------- */
+  header.site {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(14,11,24,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar { display: flex; align-items: center; justify-content: space-between; height: 66px; gap: 16px; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; }
+  .logo .dot {
+    width: 30px; height: 30px; border-radius: 9px;
+    background: linear-gradient(135deg, var(--brand), var(--brand-2));
+    display: inline-flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 0.95rem;
+  }
+  .logo b { color: var(--gold); }
+
+  .primary { display: flex; align-items: center; gap: 4px; }
+  .primary a {
+    color: var(--muted); font-size: 0.92rem; font-weight: 500;
+    padding: 8px 12px; border-radius: 9px;
+  }
+  .primary a:hover { color: var(--text); background: var(--surface); }
+
+  .menu-toggle, .menu-btn { display: none; }
+  .menu-btn {
+    width: 44px; height: 40px; border-radius: 10px; border: 1px solid var(--line);
+    background: var(--surface); cursor: pointer; align-items: center; justify-content: center;
+    flex-direction: column; gap: 4px;
+  }
+  .menu-btn span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    background:
+      radial-gradient(900px 500px at 15% -20%, rgba(139,92,246,0.35), transparent),
+      radial-gradient(800px 500px at 95% 0%, rgba(236,72,153,0.25), transparent),
+      var(--bg-2);
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .hero-grid { display: grid; grid-template-columns: 1fr; gap: 30px; padding: 56px 0 50px; align-items: center; }
+  .eyebrow {
+    display: inline-block; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid var(--line); padding: 5px 12px; border-radius: 999px; margin-bottom: 16px;
+    background: rgba(0,0,0,0.2);
+  }
+  .hero h1 { font-size: 2.2rem; line-height: 1.12; margin: 0 0 14px; letter-spacing: -0.02em; }
+  .hero h1 .grad { background: linear-gradient(120deg, var(--brand), var(--brand-2), var(--gold)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero p.lead { color: var(--muted); font-size: 1.08rem; margin: 0 0 24px; max-width: 560px; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 20px; border-radius: 11px; font-weight: 600; font-size: 0.95rem; cursor: pointer;
+  }
+  .btn-primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #fff; }
+  .btn-primary:hover { filter: brightness(1.08); }
+  .btn-ghost { border: 1px solid var(--line); color: var(--text); background: var(--surface); }
+  .btn-ghost:hover { background: var(--surface-2); }
+
+  .hero-stats { display: flex; gap: 26px; margin-top: 30px; flex-wrap: wrap; }
+  .hero-stats div b { font-size: 1.5rem; display: block; color: var(--gold); }
+  .hero-stats div span { color: var(--muted); font-size: 0.82rem; }
+
+  /* Featured spotlight card */
+  .spotlight {
+    background: linear-gradient(160deg, var(--surface-2), var(--surface));
+    border: 1px solid var(--line); border-radius: 20px; overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  }
+  .spotlight .img {
+    aspect-ratio: 16 / 10;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(139,92,246,0.5), transparent 60%),
+      linear-gradient(160deg, #2b2350, #17122a);
+    display: flex; align-items: flex-end; padding: 18px;
+    color: var(--muted); font-size: 0.8rem;
+  }
+  .spotlight .sb { padding: 18px 20px 22px; }
+  .spotlight .tag { color: var(--gold); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; }
+  .spotlight h3 { margin: 6px 0 8px; font-size: 1.3rem; }
+  .spotlight p { color: var(--muted); font-size: 0.92rem; margin: 0; }
+
+  /* ---------- SECTION ---------- */
+  section.block { padding: 46px 0 6px; }
+  .sec-head { display: flex; align-items: end; justify-content: space-between; margin-bottom: 20px; gap: 16px; }
+  .sec-head h2 { font-size: 1.55rem; margin: 0; letter-spacing: -0.01em; display: flex; align-items: center; gap: 11px; }
+  .sec-head h2 .pip { width: 10px; height: 24px; border-radius: 4px; background: linear-gradient(180deg, var(--brand), var(--brand-2)); }
+  .sec-head .view { color: var(--muted); font-size: 0.88rem; white-space: nowrap; }
+  .sec-head .view:hover { color: var(--gold); }
+  .sec-head p.sub { margin: 4px 0 0; color: var(--muted); font-size: 0.9rem; }
+
+  /* ---------- CARD GRID ---------- */
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    overflow: hidden; transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+  .card:hover { transform: translateY(-4px); border-color: var(--brand); }
+  .card .thumb {
+    aspect-ratio: 3 / 2; position: relative;
+    display: flex; align-items: flex-end; padding: 10px;
+    color: rgba(255,255,255,0.5); font-size: 0.72rem;
+    background: linear-gradient(160deg, #2a2350, #16122a);
+  }
+  .card .thumb.people { background: linear-gradient(160deg, #3a2b5e, #1a1430); }
+  .card .thumb.film { background: linear-gradient(160deg, #402038, #17111f); }
+  .card .thumb.tv { background: linear-gradient(160deg, #1f3350, #101627); }
+  .card .thumb.award { background: linear-gradient(160deg, #4a3a12, #1c1608); }
+  .chip {
+    position: absolute; top: 10px; left: 10px;
+    font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+    background: rgba(10,8,18,0.7); color: var(--gold);
+    padding: 4px 9px; border-radius: 999px; border: 1px solid var(--line);
+  }
+  .card-b { padding: 13px 15px 16px; }
+  .card-b h3 { margin: 0 0 4px; font-size: 1.02rem; line-height: 1.25; }
+  .card-b p { margin: 0; color: var(--muted); font-size: 0.83rem; }
+
+  /* ---------- NEWSLETTER BAND ---------- */
+  .band {
+    margin: 54px 0 10px;
+    background: linear-gradient(135deg, rgba(139,92,246,0.18), rgba(236,72,153,0.14));
+    border: 1px solid var(--line); border-radius: 22px; padding: 34px 26px; text-align: center;
+  }
+  .band h2 { margin: 0 0 8px; font-size: 1.5rem; }
+  .band p { color: var(--muted); margin: 0 auto 20px; max-width: 520px; }
+  .band form { display: flex; gap: 10px; max-width: 440px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+  .band input {
+    flex: 1 1 220px; padding: 12px 16px; border-radius: 11px; border: 1px solid var(--line);
+    background: var(--bg); color: var(--text); font-size: 0.95rem;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer.site {
+    margin-top: 40px; background: #0a0812; border-top: 1px solid var(--line);
+    padding: 44px 0 30px;
+  }
+  .foot-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
+  .foot-col h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin: 0 0 12px; }
+  .foot-col a { display: block; color: var(--muted); font-size: 0.9rem; padding: 4px 0; }
+  .foot-col a:hover { color: var(--text); }
+  .foot-col p { color: var(--muted); font-size: 0.9rem; margin: 0; }
+  .foot-bottom { border-top: 1px solid var(--line); margin-top: 30px; padding-top: 20px; color: var(--muted); font-size: 0.82rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 860px) {
+    .primary {
+      position: fixed; inset: 106px 0 auto 0;
+      flex-direction: column; align-items: stretch; gap: 2px;
+      background: var(--bg-2); border-bottom: 1px solid var(--line);
+      padding: 12px 20px 20px; transform: translateY(-140%); transition: transform 0.25s ease;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .primary a { padding: 12px; border-radius: 10px; }
+    .menu-toggle:checked ~ .primary { transform: translateY(0); }
+    .menu-btn { display: flex; }
+  }
+
+  @media (min-width: 720px) {
+    .grid { grid-template-columns: repeat(3, 1fr); }
+    .hero h1 { font-size: 3rem; }
+  }
+  @media (min-width: 980px) {
+    .hero-grid { grid-template-columns: 1.15fr 0.85fr; }
+    .foot-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+  }
+  @media (min-width: 1100px) {
+    .grid { grid-template-columns: repeat(6, 1fr); }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- ===== SECONDARY (TOP) MENU ===== -->
+<div class="topbar">
+  <div class="wrap">
+    <span class="greet">Your premium entertainment knowledge base</span>
+    <nav aria-label="Secondary menu">
+      <a href="/about-us">About Us</a>
+      <a href="/contact-us">Contact Us</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/disclaimer">Disclaimer</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ===== HEADER + PRIMARY MENU ===== -->
+<header class="site">
+  <div class="wrap">
+    <div class="bar">
+      <a class="logo" href="/">
+        <span class="dot">CD</span>
+        <span>Celeb<b>Dossier</b></span>
+      </a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
+      <nav class="primary" aria-label="Primary menu">
+        <a href="/actors">Actors</a>
+        <a href="/actresses">Actresses</a>
+        <a href="/directors">Directors</a>
+        <a href="/producers">Producers</a>
+        <a href="/writers">Writers</a>
+        <a href="/movies">Movies</a>
+        <a href="/television">Television</a>
+        <a href="/awards">Awards</a>
+      </nav>
+
+      <label for="menu-toggle" class="menu-btn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Original &middot; Evergreen &middot; Ad-light</span>
+        <h1>The stories behind the <span class="grad">stars you love</span>.</h1>
+        <p class="lead">CelebDossier brings you carefully researched biographies, movie deep-dives, TV show guides, and award coverage. No clutter, just clean and reliable entertainment knowledge.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#actresses">Explore Profiles</a>
+          <a class="btn btn-ghost" href="#movies">Browse Movies</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>8</b><span>Categories</span></div>
+          <div><b>100%</b><span>Original Content</span></div>
+          <div><b>Daily</b><span>Fresh Updates</span></div>
+        </div>
+      </div>
+
+      <article class="spotlight" aria-label="Featured story">
+        <div class="img">Featured Image Placeholder</div>
+        <div class="sb">
+          <span class="tag">Featured &middot; Breakout Star</span>
+          <h3><a href="/actress/inde-navarrette">Inde Navarrette</a></h3>
+          <p>From Superman &amp; Lois to her chilling turn in the horror hit Obsession, meet the young actress everyone is talking about.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <!-- ===== ACTORS ===== -->
+  <section class="block" id="actors">
+    <div class="sec-head">
+      <div>
+        <h2><span class="pip"></span>Actors</h2>
+        <p class="sub">In-depth profiles of the men shaping today's screens.</p>
+      </div>
+      <a class="view" href="/actors">View all &rarr;</a>
+    </div>
+    <div class="grid">
+      <a class="card" href="/actor/michael-johnston">
+        <div class="thumb people"><span class="chip">Actor</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Michael Johnston</h3><p>Known for Obsession</p></div>
+      </a>
+      <a class="card" href="/actor/tyler-hoechlin">
+        <div class="thumb people"><span class="chip">Actor</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Tyler Hoechlin</h3><p>Known for Superman &amp; Lois</p></div>
+      </a>
+      <a class="card" href="/actor/cooper-tomlinson">
+        <div class="thumb people"><span class="chip">Actor</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Cooper Tomlinson</h3><p>Known for Obsession</p></div>
+      </a>
+      <a class="card" href="/actor/andy-richter">
+        <div class="thumb people"><span class="chip">Actor</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Andy Richter</h3><p>Comedy &amp; supporting roles</p></div>
+      </a>
+      <a class="card" href="/actor/darin-toonder">
+        <div class="thumb people"><span class="chip">Actor</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Darin Toonder</h3><p>Known for Obsession</p></div>
+      </a>
+      <a class="card" href="/actor/anthony-pavone">
+        <div class="thumb people"><span class="chip">Actor</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Anthony Pavone</h3><p>Known for Obsession</p></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== ACTRESSES ===== -->
+  <section class="block" id="actresses">
+    <div class="sec-head">
+      <div>
+        <h2><span class="pip"></span>Actresses</h2>
+        <p class="sub">The leading women lighting up film and television.</p>
+      </div>
+      <a class="view" href="/actresses">View all &rarr;</a>
+    </div>
+    <div class="grid">
+      <a class="card" href="/actress/inde-navarrette">
+        <div class="thumb people"><span class="chip">Actress</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Inde Navarrette</h3><p>Known for Superman &amp; Lois, Obsession</p></div>
+      </a>
+      <a class="card" href="/actress/elizabeth-tulloch">
+        <div class="thumb people"><span class="chip">Actress</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Elizabeth Tulloch</h3><p>Known for Superman &amp; Lois</p></div>
+      </a>
+      <a class="card" href="/actress/megan-lawless">
+        <div class="thumb people"><span class="chip">Actress</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Megan Lawless</h3><p>Known for Obsession</p></div>
+      </a>
+      <a class="card" href="/actress/haley-fitzgerald">
+        <div class="thumb people"><span class="chip">Actress</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Haley Fitzgerald</h3><p>Known for Obsession</p></div>
+      </a>
+      <a class="card" href="/actress/chloe-breen">
+        <div class="thumb people"><span class="chip">Actress</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Chloe Breen</h3><p>Known for Obsession</p></div>
+      </a>
+      <a class="card" href="/actress/alisha-boe">
+        <div class="thumb people"><span class="chip">Actress</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Alisha Boe</h3><p>Known for 13 Reasons Why</p></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== DIRECTORS ===== -->
+  <section class="block" id="directors">
+    <div class="sec-head">
+      <div>
+        <h2><span class="pip"></span>Directors</h2>
+        <p class="sub">The visionaries who bring stories to the screen.</p>
+      </div>
+      <a class="view" href="/directors">View all &rarr;</a>
+    </div>
+    <div class="grid">
+      <a class="card" href="/director/curry-barker">
+        <div class="thumb people"><span class="chip">Director</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Curry Barker</h3><p>Director of Obsession</p></div>
+      </a>
+      <a class="card" href="/director/tara-miele">
+        <div class="thumb people"><span class="chip">Director</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Tara Miele</h3><p>Director of Wander Darkly</p></div>
+      </a>
+      <a class="card" href="/director/james-gunn">
+        <div class="thumb people"><span class="chip">Director</span>Photo Placeholder</div>
+        <div class="card-b"><h3>James Gunn</h3><p>Filmmaker &amp; studio head</p></div>
+      </a>
+      <a class="card" href="/director/greg-berlanti">
+        <div class="thumb people"><span class="chip">Director</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Greg Berlanti</h3><p>TV creator &amp; director</p></div>
+      </a>
+      <a class="card" href="/director/tom-mccarthy">
+        <div class="thumb people"><span class="chip">Director</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Tom McCarthy</h3><p>Film &amp; TV director</p></div>
+      </a>
+      <a class="card" href="/director/brian-yorkey">
+        <div class="thumb people"><span class="chip">Director</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Brian Yorkey</h3><p>Creator of 13 Reasons Why</p></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCERS ===== -->
+  <section class="block" id="producers">
+    <div class="sec-head">
+      <div>
+        <h2><span class="pip"></span>Producers</h2>
+        <p class="sub">The people who make big projects happen.</p>
+      </div>
+      <a class="view" href="/producers">View all &rarr;</a>
+    </div>
+    <div class="grid">
+      <a class="card" href="/producer/jason-blum">
+        <div class="thumb people"><span class="chip">Producer</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Jason Blum</h3><p>Executive producer, Obsession</p></div>
+      </a>
+      <a class="card" href="/producer/greg-berlanti">
+        <div class="thumb people"><span class="chip">Producer</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Greg Berlanti</h3><p>Producer, Superman &amp; Lois</p></div>
+      </a>
+      <a class="card" href="/producer/james-harris">
+        <div class="thumb people"><span class="chip">Producer</span>Photo Placeholder</div>
+        <div class="card-b"><h3>James Harris</h3><p>Producer, Obsession</p></div>
+      </a>
+      <a class="card" href="/producer/christian-mercuri">
+        <div class="thumb people"><span class="chip">Producer</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Christian Mercuri</h3><p>Producer, Obsession</p></div>
+      </a>
+      <a class="card" href="/producer/haley-nicole-johnson">
+        <div class="thumb people"><span class="chip">Producer</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Haley Nicole Johnson</h3><p>Producer, Obsession</p></div>
+      </a>
+      <a class="card" href="/producer/roman-viaris">
+        <div class="thumb people"><span class="chip">Producer</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Roman Viaris</h3><p>Producer, Obsession</p></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== WRITERS ===== -->
+  <section class="block" id="writers">
+    <div class="sec-head">
+      <div>
+        <h2><span class="pip"></span>Writers / Screenwriters</h2>
+        <p class="sub">The storytellers behind the scripts and screenplays.</p>
+      </div>
+      <a class="view" href="/writers">View all &rarr;</a>
+    </div>
+    <div class="grid">
+      <a class="card" href="/writer/curry-barker">
+        <div class="thumb people"><span class="chip">Writer</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Curry Barker</h3><p>Writer of Obsession</p></div>
+      </a>
+      <a class="card" href="/writer/todd-helbing">
+        <div class="thumb people"><span class="chip">Writer</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Todd Helbing</h3><p>Showrunner, Superman &amp; Lois</p></div>
+      </a>
+      <a class="card" href="/writer/jay-asher">
+        <div class="thumb people"><span class="chip">Writer</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Jay Asher</h3><p>Author of 13 Reasons Why</p></div>
+      </a>
+      <a class="card" href="/writer/brian-yorkey">
+        <div class="thumb people"><span class="chip">Writer</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Brian Yorkey</h3><p>Creator of 13 Reasons Why</p></div>
+      </a>
+      <a class="card" href="/writer/tara-miele">
+        <div class="thumb people"><span class="chip">Writer</span>Photo Placeholder</div>
+        <div class="card-b"><h3>Tara Miele</h3><p>Writer of Wander Darkly</p></div>
+      </a>
+      <a class="card" href="/writer/james-gunn">
+        <div class="thumb people"><span class="chip">Writer</span>Photo Placeholder</div>
+        <div class="card-b"><h3>James Gunn</h3><p>Writer &amp; filmmaker</p></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== MOVIES ===== -->
+  <section class="block" id="movies">
+    <div class="sec-head">
+      <div>
+        <h2><span class="pip"></span>Movies</h2>
+        <p class="sub">Deep-dives into the films worth talking about.</p>
+      </div>
+      <a class="view" href="/movies">View all &rarr;</a>
+    </div>
+    <div class="grid">
+      <a class="card" href="/movie/obsession">
+        <div class="thumb film"><span class="chip">Movie</span>Poster Placeholder</div>
+        <div class="card-b"><h3>Obsession</h3><p>2025 &middot; Supernatural Horror</p></div>
+      </a>
+      <a class="card" href="/movie/trap-house">
+        <div class="thumb film"><span class="chip">Movie</span>Poster Placeholder</div>
+        <div class="card-b"><h3>Trap House</h3><p>2025 &middot; Action Thriller</p></div>
+      </a>
+      <a class="card" href="/movie/wander-darkly">
+        <div class="thumb film"><span class="chip">Movie</span>Poster Placeholder</div>
+        <div class="card-b"><h3>Wander Darkly</h3><p>2020 &middot; Drama</p></div>
+      </a>
+      <a class="card" href="/movie/the-hate-u-give">
+        <div class="thumb film"><span class="chip">Movie</span>Poster Placeholder</div>
+        <div class="card-b"><h3>The Hate U Give</h3><p>2018 &middot; Drama</p></div>
+      </a>
+      <a class="card" href="/movie/mean-girls">
+        <div class="thumb film"><span class="chip">Movie</span>Poster Placeholder</div>
+        <div class="card-b"><h3>Mean Girls</h3><p>2024 &middot; Musical Comedy</p></div>
+      </a>
+      <a class="card" href="/movie/slash">
+        <div class="thumb film"><span class="chip">Movie</span>Poster Placeholder</div>
+        <div class="card-b"><h3>Slash</h3><p>2016 &middot; Comedy Drama</p></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== TELEVISION ===== -->
+  <section class="block" id="television">
+    <div class="sec-head">
+      <div>
+        <h2><span class="pip"></span>Television</h2>
+        <p class="sub">Guides to the shows keeping you hooked.</p>
+      </div>
+      <a class="view" href="/television">View all &rarr;</a>
+    </div>
+    <div class="grid">
+      <a class="card" href="/tv-show/superman-and-lois">
+        <div class="thumb tv"><span class="chip">TV Show</span>Key Art Placeholder</div>
+        <div class="card-b"><h3>Superman &amp; Lois</h3><p>2021&ndash;2024 &middot; Superhero Drama</p></div>
+      </a>
+      <a class="card" href="/tv-show/13-reasons-why">
+        <div class="thumb tv"><span class="chip">TV Show</span>Key Art Placeholder</div>
+        <div class="card-b"><h3>13 Reasons Why</h3><p>2017&ndash;2020 &middot; Teen Drama</p></div>
+      </a>
+      <a class="card" href="/tv-show/dentons-death-date">
+        <div class="thumb tv"><span class="chip">TV Show</span>Key Art Placeholder</div>
+        <div class="card-b"><h3>Denton's Death Date</h3><p>2019 &middot; Comedy Series</p></div>
+      </a>
+      <a class="card" href="/tv-show/conan">
+        <div class="thumb tv"><span class="chip">TV Show</span>Key Art Placeholder</div>
+        <div class="card-b"><h3>Conan</h3><p>Late-Night Talk Show</p></div>
+      </a>
+      <a class="card" href="/tv-show/smallville">
+        <div class="thumb tv"><span class="chip">TV Show</span>Key Art Placeholder</div>
+        <div class="card-b"><h3>Smallville</h3><p>Superhero Drama</p></div>
+      </a>
+      <a class="card" href="/tv-show/paradise">
+        <div class="thumb tv"><span class="chip">TV Show</span>Key Art Placeholder</div>
+        <div class="card-b"><h3>Paradise</h3><p>2025 &middot; Drama Series</p></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== AWARDS ===== -->
+  <section class="block" id="awards">
+    <div class="sec-head">
+      <div>
+        <h2><span class="pip"></span>Awards</h2>
+        <p class="sub">The ceremonies that crown the year's best.</p>
+      </div>
+      <a class="view" href="/awards">View all &rarr;</a>
+    </div>
+    <div class="grid">
+      <a class="card" href="/award/saturn-awards">
+        <div class="thumb award"><span class="chip">Award</span>Trophy Placeholder</div>
+        <div class="card-b"><h3>Saturn Awards</h3><p>Sci-Fi, Fantasy &amp; Horror</p></div>
+      </a>
+      <a class="card" href="/award/academy-awards">
+        <div class="thumb award"><span class="chip">Award</span>Trophy Placeholder</div>
+        <div class="card-b"><h3>Academy Awards</h3><p>The Oscars</p></div>
+      </a>
+      <a class="card" href="/award/golden-globe-awards">
+        <div class="thumb award"><span class="chip">Award</span>Trophy Placeholder</div>
+        <div class="card-b"><h3>Golden Globe Awards</h3><p>Film &amp; Television</p></div>
+      </a>
+      <a class="card" href="/award/primetime-emmy-awards">
+        <div class="thumb award"><span class="chip">Award</span>Trophy Placeholder</div>
+        <div class="card-b"><h3>Primetime Emmy Awards</h3><p>Television Excellence</p></div>
+      </a>
+      <a class="card" href="/award/critics-choice-awards">
+        <div class="thumb award"><span class="chip">Award</span>Trophy Placeholder</div>
+        <div class="card-b"><h3>Critics' Choice Awards</h3><p>Film &amp; Television</p></div>
+      </a>
+      <a class="card" href="/award/mtv-movie-tv-awards">
+        <div class="thumb award"><span class="chip">Award</span>Trophy Placeholder</div>
+        <div class="card-b"><h3>MTV Movie &amp; TV Awards</h3><p>Fan-Voted Honors</p></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="band" aria-labelledby="nl">
+    <h2 id="nl">Never miss a dossier</h2>
+    <p>Get fresh celebrity profiles, movie breakdowns, and award updates delivered straight to your inbox.</p>
+    <form onsubmit="return false;">
+      <input type="email" placeholder="Enter your email" aria-label="Email address" required>
+      <button class="btn btn-primary" type="submit">Subscribe</button>
+    </form>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <a class="logo" href="/" style="margin-bottom:12px;">
+          <span class="dot">CD</span><span>Celeb<b>Dossier</b></span>
+        </a>
+        <p>An original entertainment knowledge base. Evergreen biographies, movie pages, TV guides, and award coverage, written to stay useful for years.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Categories</h4>
+        <a href="/actors">Actors</a>
+        <a href="/actresses">Actresses</a>
+        <a href="/directors">Directors</a>
+        <a href="/producers">Producers</a>
+        <a href="/writers">Writers</a>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="/movies">Movies</a>
+        <a href="/television">Television</a>
+        <a href="/awards">Awards</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="/about-us">About Us</a>
+        <a href="/contact-us">Contact Us</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/disclaimer">Disclaimer</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 CelebDossier.com. All rights reserved.</span>
+      <span>Made for entertainment fans worldwide.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
