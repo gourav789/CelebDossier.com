@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us | CelebDossier</title>
+<meta name="description" content="Contact CelebDossier for questions, corrections, feedback, business inquiries, or general support. We'd love to hear from you.">
+<link rel="canonical" href="https://celebdossier.com/contact">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact Us | CelebDossier">
+<meta property="og:description" content="Contact CelebDossier for questions, corrections, feedback, business inquiries, or general support. We'd love to hear from you.">
+<meta property="og:url" content="https://celebdossier.com/contact">
+<meta property="og:image" content="https://celebdossier.com/images/celebdossier-cover.jpg">
+
+<style>
+  /* ========== DESIGN TOKENS (homepage) ========== */
+  :root {
+    --bg: #0e0b18;
+    --bg-2: #141022;
+    --surface: #1b1630;
+    --surface-2: #241d3d;
+    --line: #302748;
+    --text: #f2effa;
+    --muted: #a79fc6;
+    --brand: #8b5cf6;
+    --brand-2: #ec4899;
+    --gold: #f6c453;
+    --radius: 16px;
+    --maxw: 1200px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+  .visually-hidden {
+    position: absolute !important; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0);
+    white-space: nowrap; border: 0;
+  }
+
+  /* ========== TOP (SECONDARY) BAR ========== */
+  .topbar {
+    background: #0a0812;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.82rem;
+  }
+  .topbar .wrap { display: flex; justify-content: space-between; align-items: center; min-height: 40px; padding-top: 8px; padding-bottom: 8px; gap: 14px; flex-wrap: wrap; }
+  .topbar nav { display: flex; gap: 18px; }
+  .topbar a { color: var(--muted); }
+  .topbar a:hover { color: var(--gold); }
+  .topbar .greet { color: var(--muted); }
+
+  /* ========== HEADER + PRIMARY NAV ========== */
+  header.site {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(14,11,24,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar { display: flex; align-items: center; justify-content: space-between; height: 66px; gap: 16px; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; }
+  .logo .dot {
+    width: 30px; height: 30px; border-radius: 9px;
+    background: linear-gradient(135deg, var(--brand), var(--brand-2));
+    display: inline-flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 0.95rem;
+  }
+  .logo b { color: var(--gold); }
+
+  .primary { display: flex; align-items: center; gap: 4px; }
+  .primary a {
+    color: var(--muted); font-size: 0.92rem; font-weight: 500;
+    padding: 8px 12px; border-radius: 9px;
+  }
+  .primary a:hover { color: var(--text); background: var(--surface); }
+
+  .menu-toggle, .menu-btn { display: none; }
+  .menu-btn {
+    width: 44px; height: 40px; border-radius: 10px; border: 1px solid var(--line);
+    background: var(--surface); cursor: pointer; align-items: center; justify-content: center;
+    flex-direction: column; gap: 4px;
+  }
+  .menu-btn span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; }
+
+  /* ========== SHARED ========== */
+  .eyebrow {
+    display: inline-block; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid var(--line); padding: 5px 12px; border-radius: 999px; margin-bottom: 16px;
+    background: rgba(0,0,0,0.2);
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 20px; border-radius: 11px; font-weight: 600; font-size: 0.95rem; cursor: pointer;
+    border: none; transition: filter 0.15s ease, background 0.15s ease, transform 0.15s ease;
+    font-family: inherit;
+  }
+  .btn-primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #fff; }
+  .btn-primary:hover { filter: brightness(1.08); }
+  .btn-ghost { border: 1px solid var(--line); color: var(--text); background: var(--surface); }
+  .btn-ghost:hover { background: var(--surface-2); }
+
+  .sec-head { margin-bottom: 20px; }
+  .sec-head h2 { font-size: 1.55rem; margin: 0; letter-spacing: -0.01em; display: flex; align-items: center; gap: 11px; }
+  .sec-head h2 .pip { width: 10px; height: 24px; border-radius: 4px; background: linear-gradient(180deg, var(--brand), var(--brand-2)); flex-shrink: 0; }
+  .sec-head p.sub { margin: 4px 0 0; color: var(--muted); font-size: 0.9rem; }
+
+  /* ========== FOOTER ========== */
+  footer.site {
+    margin-top: 40px; background: #0a0812; border-top: 1px solid var(--line);
+    padding: 44px 0 30px;
+  }
+  .foot-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
+  .foot-col h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin: 0 0 12px; }
+  .foot-col a { display: block; color: var(--muted); font-size: 0.9rem; padding: 4px 0; }
+  .foot-col a:hover { color: var(--text); }
+  .foot-col p { color: var(--muted); font-size: 0.9rem; margin: 0; }
+  .foot-bottom { border-top: 1px solid var(--line); margin-top: 30px; padding-top: 20px; color: var(--muted); font-size: 0.82rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+  /* ========== CONTACT HERO ========== */
+  .ct-hero {
+    position: relative;
+    background:
+      radial-gradient(900px 500px at 15% -20%, rgba(139,92,246,0.35), transparent),
+      radial-gradient(800px 500px at 95% 0%, rgba(236,72,153,0.25), transparent),
+      var(--bg-2);
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+    padding: 58px 0 52px;
+    text-align: center;
+  }
+  .ct-hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(2px 2px at 20% 30%, rgba(246,196,83,0.15), transparent),
+      radial-gradient(2px 2px at 65% 20%, rgba(236,72,153,0.1), transparent),
+      radial-gradient(2px 2px at 82% 55%, rgba(246,196,83,0.1), transparent),
+      radial-gradient(2px 2px at 12% 80%, rgba(139,92,246,0.08), transparent);
+    pointer-events: none;
+  }
+  .ct-hero h1 {
+    font-size: 2.2rem; line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.02em;
+    position: relative;
+  }
+  .ct-hero h1 .grad {
+    background: linear-gradient(120deg, var(--brand), var(--brand-2), var(--gold));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .ct-hero .lead {
+    color: var(--muted); font-size: 1.05rem; margin: 0 auto; max-width: 660px;
+    position: relative;
+  }
+
+  /* ========== INFO CARDS GRID ========== */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 46px 0 6px;
+  }
+  .info-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    text-align: center;
+    transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .info-card::before {
+    content: "";
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--brand), var(--brand-2));
+    opacity: 0; transition: opacity 0.18s ease;
+  }
+  .info-card:hover { transform: translateY(-4px); border-color: var(--brand); box-shadow: 0 12px 36px rgba(139,92,246,0.12); }
+  .info-card:hover::before { opacity: 1; }
+  .info-ic {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: linear-gradient(135deg, rgba(139,92,246,0.18), rgba(236,72,153,0.12));
+    border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 14px;
+  }
+  .info-ic svg { width: 22px; height: 22px; fill: none; }
+  .info-card h3 { margin: 0 0 6px; font-size: 1.08rem; }
+  .info-card .email-link {
+    color: var(--brand); font-weight: 600; font-size: 0.95rem;
+    border-bottom: 1px solid rgba(139,92,246,0.3);
+    transition: border-color 0.15s ease;
+    display: inline-block; margin-bottom: 8px;
+  }
+  .info-card .email-link:hover { border-color: var(--brand); }
+  .info-card p { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.65; }
+
+  /* ========== CONTACT FORM ========== */
+  .form-section { padding: 46px 0 6px; }
+  .form-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  .form-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 32px 28px;
+  }
+  .form-card h2 {
+    font-size: 1.4rem; margin: 0 0 6px; display: flex; align-items: center; gap: 11px;
+  }
+  .form-card h2 .pip { width: 10px; height: 24px; border-radius: 4px; background: linear-gradient(180deg, var(--brand), var(--brand-2)); flex-shrink: 0; }
+  .form-card > p { color: var(--muted); font-size: 0.9rem; margin: 0 0 24px; }
+
+  .field {
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .field label {
+    display: block; font-size: 0.84rem; font-weight: 600;
+    color: var(--muted); margin-bottom: 6px;
+    letter-spacing: 0.02em;
+  }
+  .field label .req { color: var(--brand-2); margin-left: 2px; }
+  .field input,
+  .field textarea,
+  .field select {
+    width: 100%; padding: 12px 16px;
+    background: var(--bg); border: 1px solid var(--line);
+    border-radius: 11px; color: var(--text);
+    font-size: 0.95rem; font-family: inherit;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    outline: none;
+  }
+  .field input:focus,
+  .field textarea:focus,
+  .field select:focus {
+    border-color: var(--brand);
+    box-shadow: 0 0 0 3px rgba(139,92,246,0.15);
+  }
+  .field input::placeholder,
+  .field textarea::placeholder {
+    color: rgba(167,159,198,0.45);
+  }
+  .field textarea {
+    resize: vertical; min-height: 140px;
+  }
+
+  .form-btns {
+    display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px;
+  }
+
+  /* Form messages */
+  .form-msg {
+    display: none;
+    padding: 14px 18px;
+    border-radius: 11px;
+    font-size: 0.9rem;
+    margin-top: 16px;
+    align-items: center;
+    gap: 10px;
+  }
+  .form-msg.success {
+    display: flex;
+    background: rgba(52,211,153,0.1);
+    border: 1px solid rgba(52,211,153,0.25);
+    color: #34d399;
+  }
+  .form-msg.error {
+    display: flex;
+    background: rgba(248,113,113,0.1);
+    border: 1px solid rgba(248,113,113,0.25);
+    color: #f87171;
+  }
+  .form-msg svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+  /* ========== FAQ ACCORDION ========== */
+  .faq-section { padding: 46px 0 6px; }
+  .faq-list { display: flex; flex-direction: column; gap: 12px; }
+  .faq-item {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: border-color 0.15s ease;
+  }
+  .faq-item.open { border-color: rgba(139,92,246,0.3); }
+  .faq-q {
+    width: 100%; display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 22px; background: none; border: none; color: var(--text);
+    font-size: 0.98rem; font-weight: 600; cursor: pointer; text-align: left;
+    font-family: inherit; gap: 12px;
+  }
+  .faq-q:hover { color: var(--brand); }
+  .faq-q svg {
+    width: 18px; height: 18px; stroke: var(--muted); fill: none;
+    flex-shrink: 0; transition: transform 0.25s ease;
+  }
+  .faq-item.open .faq-q svg { transform: rotate(180deg); }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+  .faq-item.open .faq-a {
+    max-height: 300px;
+  }
+  .faq-a-inner {
+    padding: 0 22px 20px;
+    color: var(--muted); font-size: 0.92rem; line-height: 1.75;
+  }
+
+  /* ========== EDITORIAL FEEDBACK CARD ========== */
+  .feedback-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 30px 28px;
+    transition: border-color 0.15s ease;
+  }
+  .feedback-card:hover { border-color: rgba(139,92,246,0.3); }
+  .feedback-card h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 1.15rem; margin: 0 0 12px;
+  }
+  .feedback-card h3 .ic {
+    width: 40px; height: 40px; border-radius: 11px;
+    background: linear-gradient(135deg, rgba(139,92,246,0.18), rgba(236,72,153,0.12));
+    border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .feedback-card h3 .ic svg { width: 20px; height: 20px; fill: none; }
+  .feedback-card p { color: var(--muted); font-size: 0.94rem; margin: 0; line-height: 1.75; }
+
+  /* ========== CHECKLIST CARD ========== */
+  .checklist-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 30px 28px;
+    transition: border-color 0.15s ease;
+  }
+  .checklist-card:hover { border-color: rgba(139,92,246,0.3); }
+  .checklist-card h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 1.15rem; margin: 0 0 16px;
+  }
+  .checklist-card h3 .ic {
+    width: 40px; height: 40px; border-radius: 11px;
+    background: linear-gradient(135deg, rgba(246,196,83,0.2), rgba(246,196,83,0.06));
+    border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .checklist-card h3 .ic svg { width: 20px; height: 20px; fill: none; }
+  .check-list {
+    list-style: none; padding: 0; margin: 0;
+  }
+  .check-list li {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 10px 0;
+    color: var(--muted); font-size: 0.92rem; line-height: 1.6;
+    border-bottom: 1px solid rgba(48,39,72,0.5);
+  }
+  .check-list li:last-child { border-bottom: none; }
+  .check-list li svg {
+    width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px;
+  }
+
+  /* ========== EMAIL HIGHLIGHT CARD ========== */
+  .email-highlight {
+    margin: 46px 0 10px;
+    background: linear-gradient(135deg, rgba(139,92,246,0.18), rgba(236,72,153,0.14));
+    border: 1px solid var(--line); border-radius: 22px;
+    padding: 40px 26px; text-align: center;
+  }
+  .email-highlight h2 { margin: 0 0 16px; font-size: 1.4rem; }
+  .email-highlight .big-email {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 1.2rem; font-weight: 700;
+    color: var(--brand);
+    padding: 14px 28px; border-radius: 14px;
+    background: var(--surface); border: 1px solid var(--line);
+    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .email-highlight .big-email:hover {
+    transform: translateY(-2px);
+    border-color: var(--brand);
+    box-shadow: 0 8px 28px rgba(139,92,246,0.18);
+  }
+  .email-highlight .big-email svg { width: 22px; height: 22px; fill: none; flex-shrink: 0; }
+  .email-highlight p {
+    color: var(--muted); font-size: 0.9rem; margin: 14px auto 0; max-width: 440px;
+  }
+
+  /* ========== ANIMATIONS ========== */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-in { opacity: 0; animation: fadeInUp 0.55s ease forwards; }
+  .animate-in.d1 { animation-delay: 0.08s; }
+  .animate-in.d2 { animation-delay: 0.16s; }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 860px) {
+    .primary {
+      position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column; align-items: stretch; gap: 2px;
+      background: var(--bg-2); border-bottom: 1px solid var(--line);
+      padding: 12px 20px 20px; transform: translateY(-140%); transition: transform 0.25s ease;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .primary a { padding: 12px; border-radius: 10px; }
+    .menu-toggle:checked ~ .primary { transform: translateY(0); }
+    .menu-btn { display: flex; }
+  }
+
+  @media (min-width: 640px) {
+    .info-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (min-width: 720px) {
+    .ct-hero h1 { font-size: 2.8rem; }
+    .ct-hero { padding: 72px 0 62px; }
+  }
+
+  @media (min-width: 860px) {
+    .form-wrapper { grid-template-columns: 1.1fr 0.9fr; }
+    .side-cards { display: flex; flex-direction: column; gap: 16px; }
+  }
+
+  @media (min-width: 980px) {
+    .foot-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+    .ct-hero h1 { font-size: 3rem; }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- ===== SECONDARY (TOP) MENU ===== -->
+<div class="topbar">
+  <div class="wrap">
+    <span class="greet">Your premium entertainment knowledge base</span>
+    <nav aria-label="Secondary menu">
+      <a href="/about-us">About Us</a>
+      <a href="/contact-us">Contact Us</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/disclaimer">Disclaimer</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ===== HEADER + PRIMARY MENU ===== -->
+<header class="site">
+  <div class="wrap">
+    <div class="bar">
+      <a class="logo" href="/">
+        <span class="dot">CD</span>
+        <span>Celeb<b>Dossier</b></span>
+      </a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
+      <nav class="primary" aria-label="Primary menu">
+        <a href="/actors">Actors</a>
+        <a href="/actresses">Actresses</a>
+        <a href="/directors">Directors</a>
+        <a href="/producers">Producers</a>
+        <a href="/writers">Writers</a>
+        <a href="/movies">Movies</a>
+        <a href="/television">Television</a>
+        <a href="/awards">Awards</a>
+      </nav>
+
+      <label for="menu-toggle" class="menu-btn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="ct-hero" aria-labelledby="ct-hero-heading">
+  <div class="wrap">
+    <span class="eyebrow animate-in">Contact</span>
+    <h1 id="ct-hero-heading" class="animate-in d1"><span class="grad">Get in Touch</span></h1>
+    <p class="lead animate-in d2">Whether you have a question, feedback, a correction request, or a general inquiry, we'd be happy to hear from you. Our goal is to respond as quickly as possible and provide the best assistance we can.</p>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <!-- ===== CONTACT INFO CARDS ===== -->
+  <div class="info-grid" id="contact-info">
+    <article class="info-card" id="info-email">
+      <div class="info-ic" aria-hidden="true">
+        <svg viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <h3>Email</h3>
+      <a href="mailto:contact@celebdossier.com" class="email-link">contact@celebdossier.com</a>
+      <p>For general questions, website feedback, business inquiries, or support, please send us an email.</p>
+    </article>
+
+    <article class="info-card" id="info-response">
+      <div class="info-ic" aria-hidden="true">
+        <svg viewBox="0 0 24 24" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <h3>Response Time</h3>
+      <p>We aim to respond to all legitimate inquiries within <strong style="color:var(--text);">1–3 business days</strong>.</p>
+    </article>
+
+    <article class="info-card" id="info-support">
+      <div class="info-ic" aria-hidden="true">
+        <svg viewBox="0 0 24 24" stroke="var(--brand-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <h3>Support</h3>
+      <p>If you're reporting an issue with a page, please include the page URL and a brief description so we can investigate more efficiently.</p>
+    </article>
+  </div>
+
+  <!-- ===== CONTACT FORM + SIDE CARDS ===== -->
+  <section class="form-section" id="contact-form-section" aria-labelledby="form-heading">
+    <div class="form-wrapper">
+
+      <!-- Form -->
+      <div class="form-card">
+        <h2 id="form-heading"><span class="pip" aria-hidden="true"></span>Send a Message</h2>
+        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+
+        <form id="contact-form" action="mailto:contact@celebdossier.com" method="POST" enctype="text/plain" novalidate>
+          <div class="field">
+            <label for="cf-name">Full Name <span class="req" aria-label="required">*</span></label>
+            <input type="text" id="cf-name" name="name" placeholder="Your full name" required autocomplete="name">
+          </div>
+
+          <div class="field">
+            <label for="cf-email">Email Address <span class="req" aria-label="required">*</span></label>
+            <input type="email" id="cf-email" name="email" placeholder="your@email.com" required autocomplete="email">
+          </div>
+
+          <div class="field">
+            <label for="cf-subject">Subject</label>
+            <input type="text" id="cf-subject" name="subject" placeholder="What is this regarding?">
+          </div>
+
+          <div class="field">
+            <label for="cf-message">Message <span class="req" aria-label="required">*</span></label>
+            <textarea id="cf-message" name="message" placeholder="Write your message here..." required rows="5"></textarea>
+          </div>
+
+          <div class="form-btns">
+            <button type="submit" class="btn btn-primary" id="cf-submit">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
+            </button>
+            <button type="reset" class="btn btn-ghost" id="cf-clear">Clear Form</button>
+          </div>
+
+          <!-- Success Message -->
+          <div class="form-msg" id="form-success" role="alert">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Thank you! Your message has been sent successfully. We'll respond within 1–3 business days.</span>
+          </div>
+
+          <!-- Error Message -->
+          <div class="form-msg" id="form-error" role="alert">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+            <span>Please fill in all required fields correctly before submitting.</span>
+          </div>
+        </form>
+      </div>
+
+      <!-- Side Cards -->
+      <div class="side-cards">
+        <!-- Editorial Feedback -->
+        <div class="feedback-card" id="editorial-feedback">
+          <h3>
+            <span class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </span>
+            Help Improve CelebDossier
+          </h3>
+          <p>We continuously work to improve the quality, organization, and accuracy of our content. If you have suggestions, corrections, or ideas that could improve the website, we'd genuinely appreciate hearing from you.</p>
+        </div>
+
+        <!-- Before You Contact Us -->
+        <div class="checklist-card" id="before-contact">
+          <h3>
+            <span class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </span>
+            Before You Contact Us
+          </h3>
+          <ul class="check-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Check if your question is already answered on the website
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Include relevant page links when reporting issues
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Be as detailed as possible in your message
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Allow up to three business days for a response
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FAQ SECTION ===== -->
+  <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+    <div class="sec-head">
+      <h2 id="faq-heading"><span class="pip" aria-hidden="true"></span>Frequently Asked Questions</h2>
+      <p class="sub">Quick answers to the most common questions we receive.</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item" id="faq-1">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a-1">
+          How can I report incorrect information?
+          <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a" id="faq-a-1" role="region">
+          <div class="faq-a-inner">If you notice information that may require correction or updating, please contact us using the form above or email us directly. Be sure to include the page URL and any supporting details so we can review and address the issue promptly.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" id="faq-2">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a-2">
+          Can I request content updates?
+          <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a" id="faq-a-2" role="region">
+          <div class="faq-a-inner">Yes, absolutely! We welcome suggestions for corrections, updates, and improvements to existing content. Your feedback helps us maintain the accuracy and quality of the information published on CelebDossier.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" id="faq-3">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a-3">
+          Do you accept partnership inquiries?
+          <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a" id="faq-a-3" role="region">
+          <div class="faq-a-inner">Business and partnership inquiries are welcome and may be sent to our contact email at contact@celebdossier.com for review. Please include relevant details about your proposal and we'll get back to you within our standard response timeframe.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" id="faq-4">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a-4">
+          How quickly will I receive a response?
+          <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a" id="faq-a-4" role="region">
+          <div class="faq-a-inner">Most inquiries receive a response within one to three business days. However, response times may vary depending on inquiry volume and the nature of the request. We strive to respond to every legitimate inquiry as promptly as possible.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EMAIL HIGHLIGHT ===== -->
+  <section class="email-highlight" id="email-direct" aria-labelledby="email-heading">
+    <h2 id="email-heading">Email Us Directly</h2>
+    <a href="mailto:contact@celebdossier.com" class="big-email" id="email-cta">
+      <svg viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      contact@celebdossier.com
+    </a>
+    <p>We'd love to hear from you. Drop us a line anytime.</p>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <a class="logo" href="/" style="margin-bottom:12px;">
+          <span class="dot">CD</span><span>Celeb<b>Dossier</b></span>
+        </a>
+        <p>An original entertainment knowledge base. Evergreen biographies, movie pages, TV guides, and award coverage, written to stay useful for years.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Categories</h4>
+        <a href="/actors">Actors</a>
+        <a href="/actresses">Actresses</a>
+        <a href="/directors">Directors</a>
+        <a href="/producers">Producers</a>
+        <a href="/writers">Writers</a>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="/movies">Movies</a>
+        <a href="/television">Television</a>
+        <a href="/awards">Awards</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="/about-us">About Us</a>
+        <a href="/contact-us">Contact Us</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/disclaimer">Disclaimer</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 CelebDossier.com. All rights reserved.</span>
+      <span>Made for entertainment fans worldwide.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // FAQ Accordion
+  (function() {
+    document.querySelectorAll('.faq-q').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(function(fi) {
+          fi.classList.remove('open');
+          fi.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        });
+
+        // Toggle current
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  })();
+
+  // Contact Form Validation
+  (function() {
+    var form = document.getElementById('contact-form');
+    var successMsg = document.getElementById('form-success');
+    var errorMsg = document.getElementById('form-error');
+
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+      var name = document.getElementById('cf-name');
+      var email = document.getElementById('cf-email');
+      var message = document.getElementById('cf-message');
+
+      successMsg.classList.remove('success');
+      successMsg.style.display = 'none';
+      errorMsg.classList.remove('error');
+      errorMsg.style.display = 'none';
+
+      var valid = true;
+      if (!name.value.trim()) valid = false;
+      if (!email.value.trim() || !email.validity.valid) valid = false;
+      if (!message.value.trim()) valid = false;
+
+      if (!valid) {
+        e.preventDefault();
+        errorMsg.classList.add('error');
+        errorMsg.style.display = 'flex';
+        return;
+      }
+
+      // Show success (for demo / mailto fallback)
+      successMsg.classList.add('success');
+      successMsg.style.display = 'flex';
+    });
+
+    form.addEventListener('reset', function() {
+      successMsg.style.display = 'none';
+      successMsg.classList.remove('success');
+      errorMsg.style.display = 'none';
+      errorMsg.classList.remove('error');
+    });
+  })();
+</script>
+
+</body>
+</html>

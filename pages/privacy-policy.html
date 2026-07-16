@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Privacy Policy | CelebDossier</title>
+<meta name="description" content="Read the Privacy Policy for CelebDossier to learn how we collect, use, protect, and manage information when you use our website.">
+<link rel="canonical" href="https://celebdossier.com/privacy-policy">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Privacy Policy | CelebDossier">
+<meta property="og:description" content="Read the Privacy Policy for CelebDossier to learn how we collect, use, protect, and manage information when you use our website.">
+<meta property="og:url" content="https://celebdossier.com/privacy-policy">
+<meta property="og:image" content="https://celebdossier.com/images/celebdossier-cover.jpg">
+
+<style>
+  /* ========== DESIGN TOKENS (homepage) ========== */
+  :root {
+    --bg: #0e0b18;
+    --bg-2: #141022;
+    --surface: #1b1630;
+    --surface-2: #241d3d;
+    --line: #302748;
+    --text: #f2effa;
+    --muted: #a79fc6;
+    --brand: #8b5cf6;
+    --brand-2: #ec4899;
+    --gold: #f6c453;
+    --radius: 16px;
+    --maxw: 1200px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+  .visually-hidden {
+    position: absolute !important; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0);
+    white-space: nowrap; border: 0;
+  }
+
+  /* ========== TOP (SECONDARY) BAR ========== */
+  .topbar {
+    background: #0a0812;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.82rem;
+  }
+  .topbar .wrap { display: flex; justify-content: space-between; align-items: center; min-height: 40px; padding-top: 8px; padding-bottom: 8px; gap: 14px; flex-wrap: wrap; }
+  .topbar nav { display: flex; gap: 18px; }
+  .topbar a { color: var(--muted); }
+  .topbar a:hover { color: var(--gold); }
+  .topbar .greet { color: var(--muted); }
+
+  /* ========== HEADER + PRIMARY NAV ========== */
+  header.site {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(14,11,24,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar { display: flex; align-items: center; justify-content: space-between; height: 66px; gap: 16px; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; }
+  .logo .dot {
+    width: 30px; height: 30px; border-radius: 9px;
+    background: linear-gradient(135deg, var(--brand), var(--brand-2));
+    display: inline-flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 0.95rem;
+  }
+  .logo b { color: var(--gold); }
+
+  .primary { display: flex; align-items: center; gap: 4px; }
+  .primary a {
+    color: var(--muted); font-size: 0.92rem; font-weight: 500;
+    padding: 8px 12px; border-radius: 9px;
+  }
+  .primary a:hover { color: var(--text); background: var(--surface); }
+
+  .menu-toggle, .menu-btn { display: none; }
+  .menu-btn {
+    width: 44px; height: 40px; border-radius: 10px; border: 1px solid var(--line);
+    background: var(--surface); cursor: pointer; align-items: center; justify-content: center;
+    flex-direction: column; gap: 4px;
+  }
+  .menu-btn span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; }
+
+  /* ========== SHARED ========== */
+  .eyebrow {
+    display: inline-block; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid var(--line); padding: 5px 12px; border-radius: 999px; margin-bottom: 16px;
+    background: rgba(0,0,0,0.2);
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 20px; border-radius: 11px; font-weight: 600; font-size: 0.95rem; cursor: pointer;
+    border: none; transition: filter 0.15s ease, background 0.15s ease;
+  }
+  .btn-primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #fff; }
+  .btn-primary:hover { filter: brightness(1.08); }
+
+  /* ========== FOOTER ========== */
+  footer.site {
+    margin-top: 40px; background: #0a0812; border-top: 1px solid var(--line);
+    padding: 44px 0 30px;
+  }
+  .foot-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
+  .foot-col h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin: 0 0 12px; }
+  .foot-col a { display: block; color: var(--muted); font-size: 0.9rem; padding: 4px 0; }
+  .foot-col a:hover { color: var(--text); }
+  .foot-col p { color: var(--muted); font-size: 0.9rem; margin: 0; }
+  .foot-bottom { border-top: 1px solid var(--line); margin-top: 30px; padding-top: 20px; color: var(--muted); font-size: 0.82rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+  /* ========== PRIVACY HERO ========== */
+  .pp-hero {
+    position: relative;
+    background:
+      radial-gradient(900px 500px at 15% -20%, rgba(139,92,246,0.35), transparent),
+      radial-gradient(800px 500px at 95% 0%, rgba(236,72,153,0.25), transparent),
+      var(--bg-2);
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+    padding: 58px 0 52px;
+    text-align: center;
+  }
+  .pp-hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(2px 2px at 20% 30%, rgba(246,196,83,0.15), transparent),
+      radial-gradient(2px 2px at 65% 20%, rgba(236,72,153,0.1), transparent),
+      radial-gradient(2px 2px at 80% 55%, rgba(246,196,83,0.1), transparent),
+      radial-gradient(2px 2px at 10% 80%, rgba(139,92,246,0.08), transparent);
+    pointer-events: none;
+  }
+  .pp-hero h1 {
+    font-size: 2.2rem; line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.02em;
+    position: relative;
+  }
+  .pp-hero h1 .grad {
+    background: linear-gradient(120deg, var(--brand), var(--brand-2), var(--gold));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .pp-hero .lead {
+    color: var(--muted); font-size: 1.05rem; margin: 0 auto 18px; max-width: 640px;
+    position: relative;
+  }
+  .pp-hero .updated {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.8rem; color: var(--muted);
+    background: var(--surface); border: 1px solid var(--line);
+    padding: 6px 14px; border-radius: 999px;
+    position: relative;
+  }
+  .pp-hero .updated svg { width: 14px; height: 14px; stroke: var(--gold); fill: none; flex-shrink: 0; }
+
+  /* ========== TWO-COLUMN LAYOUT ========== */
+  .pp-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    align-items: start;
+  }
+
+  /* ========== TABLE OF CONTENTS ========== */
+  .toc {
+    display: none; /* hidden on mobile by default */
+  }
+  .toc-inner {
+    position: sticky; top: 90px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 24px 22px;
+  }
+  .toc h3 {
+    font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--gold); margin: 0 0 14px;
+  }
+  .toc ol {
+    list-style: none; padding: 0; margin: 0; counter-reset: toc;
+  }
+  .toc li { counter-increment: toc; }
+  .toc a {
+    display: flex; align-items: center; gap: 10px;
+    color: var(--muted); font-size: 0.86rem; padding: 7px 10px;
+    border-radius: 8px; transition: all 0.15s ease;
+  }
+  .toc a::before {
+    content: counter(toc, decimal-leading-zero);
+    font-size: 0.72rem; font-weight: 700; color: var(--line);
+    min-width: 20px; transition: color 0.15s ease;
+  }
+  .toc a:hover { color: var(--text); background: var(--surface-2); }
+  .toc a:hover::before { color: var(--brand); }
+  .toc a.active { color: var(--text); background: var(--surface-2); }
+  .toc a.active::before { color: var(--brand); }
+
+  /* Mobile ToC */
+  .toc-mobile {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+  .toc-mobile-toggle {
+    width: 100%; display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px; background: none; border: none; color: var(--text);
+    font-size: 0.95rem; font-weight: 600; cursor: pointer;
+    font-family: inherit;
+  }
+  .toc-mobile-toggle svg {
+    width: 18px; height: 18px; stroke: var(--muted); fill: none;
+    transition: transform 0.2s ease;
+  }
+  .toc-mobile-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+  .toc-mobile-list {
+    display: none; padding: 0 20px 16px;
+  }
+  .toc-mobile-list.open { display: block; }
+  .toc-mobile-list ol {
+    list-style: none; padding: 0; margin: 0; counter-reset: toc-m;
+  }
+  .toc-mobile-list li { counter-increment: toc-m; }
+  .toc-mobile-list a {
+    display: flex; align-items: center; gap: 10px;
+    color: var(--muted); font-size: 0.86rem; padding: 8px 10px;
+    border-radius: 8px; transition: all 0.15s ease;
+  }
+  .toc-mobile-list a::before {
+    content: counter(toc-m, decimal-leading-zero);
+    font-size: 0.72rem; font-weight: 700; color: var(--line); min-width: 20px;
+  }
+  .toc-mobile-list a:hover { color: var(--text); background: var(--surface-2); }
+
+  /* ========== CONTENT SECTIONS ========== */
+  .pp-content { min-width: 0; }
+
+  .pp-section {
+    margin-bottom: 32px;
+    scroll-margin-top: 100px;
+  }
+  .pp-section-head {
+    display: flex; align-items: center; gap: 11px;
+    margin-bottom: 14px;
+  }
+  .pp-section-head .pip {
+    width: 10px; height: 24px; border-radius: 4px; flex-shrink: 0;
+    background: linear-gradient(180deg, var(--brand), var(--brand-2));
+  }
+  .pp-section-head h2 {
+    font-size: 1.4rem; margin: 0; letter-spacing: -0.01em;
+  }
+
+  .pp-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 26px 24px;
+    margin-bottom: 16px;
+    transition: border-color 0.15s ease;
+  }
+  .pp-card:hover { border-color: rgba(139,92,246,0.3); }
+  .pp-card:last-child { margin-bottom: 0; }
+
+  .pp-card h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 1.08rem; margin: 0 0 12px;
+  }
+  .pp-card h3 .ic {
+    width: 36px; height: 36px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; border: 1px solid var(--line);
+  }
+  .pp-card h3 .ic svg { width: 18px; height: 18px; fill: none; }
+  .pp-card h3 .ic.purple { background: linear-gradient(135deg, rgba(139,92,246,0.18), rgba(139,92,246,0.06)); }
+  .pp-card h3 .ic.pink { background: linear-gradient(135deg, rgba(236,72,153,0.18), rgba(236,72,153,0.06)); }
+  .pp-card h3 .ic.gold { background: linear-gradient(135deg, rgba(246,196,83,0.2), rgba(246,196,83,0.06)); }
+  .pp-card h3 .ic.blue { background: linear-gradient(135deg, rgba(56,189,248,0.2), rgba(56,189,248,0.06)); }
+  .pp-card h3 .ic.green { background: linear-gradient(135deg, rgba(52,211,153,0.2), rgba(52,211,153,0.06)); }
+
+  .pp-card p, .pp-text p {
+    color: var(--muted); font-size: 0.94rem; margin: 0 0 12px; line-height: 1.75;
+  }
+  .pp-card p:last-child, .pp-text p:last-child { margin-bottom: 0; }
+
+  .pp-card ul, .pp-text ul {
+    color: var(--muted); font-size: 0.9rem; margin: 10px 0 0; padding: 0 0 0 8px;
+    list-style: none; line-height: 1.8;
+  }
+  .pp-card ul li, .pp-text ul li {
+    padding: 3px 0 3px 20px;
+    position: relative;
+  }
+  .pp-card ul li::before, .pp-text ul li::before {
+    content: "";
+    position: absolute; left: 0; top: 13px;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--brand); opacity: 0.6;
+  }
+
+  .pp-text {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 26px 24px;
+  }
+
+  /* Rights cards grid */
+  .rights-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .right-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px 18px;
+    text-align: center;
+    transition: transform 0.18s ease, border-color 0.18s ease;
+  }
+  .right-card:hover { transform: translateY(-3px); border-color: var(--brand); }
+  .right-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: linear-gradient(135deg, rgba(139,92,246,0.18), rgba(236,72,153,0.12));
+    border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 10px;
+  }
+  .right-icon svg { width: 20px; height: 20px; fill: none; }
+  .right-card h3 { font-size: 0.95rem; margin: 0 0 4px; }
+  .right-card p { color: var(--muted); font-size: 0.82rem; margin: 0; line-height: 1.55; }
+
+  /* Divider */
+  .pp-divider {
+    border: none; border-top: 1px solid var(--line);
+    margin: 6px 0 32px;
+  }
+
+  /* CTA band */
+  .pp-cta {
+    margin: 10px 0;
+    background: linear-gradient(135deg, rgba(139,92,246,0.18), rgba(236,72,153,0.14));
+    border: 1px solid var(--line); border-radius: 22px; padding: 36px 26px; text-align: center;
+  }
+  .pp-cta h2 { margin: 0 0 8px; font-size: 1.4rem; }
+  .pp-cta p { color: var(--muted); margin: 0 auto 20px; max-width: 520px; font-size: 0.95rem; }
+
+  /* ========== ANIMATIONS ========== */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-in { opacity: 0; animation: fadeInUp 0.55s ease forwards; }
+  .animate-in.d1 { animation-delay: 0.08s; }
+  .animate-in.d2 { animation-delay: 0.16s; }
+  .animate-in.d3 { animation-delay: 0.24s; }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 860px) {
+    .primary {
+      position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column; align-items: stretch; gap: 2px;
+      background: var(--bg-2); border-bottom: 1px solid var(--line);
+      padding: 12px 20px 20px; transform: translateY(-140%); transition: transform 0.25s ease;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .primary a { padding: 12px; border-radius: 10px; }
+    .menu-toggle:checked ~ .primary { transform: translateY(0); }
+    .menu-btn { display: flex; }
+    .rights-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (min-width: 720px) {
+    .pp-hero h1 { font-size: 2.8rem; }
+    .pp-hero { padding: 72px 0 62px; }
+  }
+
+  @media (min-width: 920px) {
+    .pp-layout {
+      grid-template-columns: 240px 1fr;
+      gap: 36px;
+    }
+    .toc { display: block; }
+    .toc-mobile { display: none; }
+  }
+
+  @media (min-width: 980px) {
+    .foot-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+    .pp-hero h1 { font-size: 3rem; }
+  }
+
+  @media (min-width: 1060px) {
+    .pp-layout { grid-template-columns: 260px 1fr; gap: 42px; }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- ===== SECONDARY (TOP) MENU ===== -->
+<div class="topbar">
+  <div class="wrap">
+    <span class="greet">Your premium entertainment knowledge base</span>
+    <nav aria-label="Secondary menu">
+      <a href="/about-us">About Us</a>
+      <a href="/contact-us">Contact Us</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/disclaimer">Disclaimer</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ===== HEADER + PRIMARY MENU ===== -->
+<header class="site">
+  <div class="wrap">
+    <div class="bar">
+      <a class="logo" href="/">
+        <span class="dot">CD</span>
+        <span>Celeb<b>Dossier</b></span>
+      </a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
+      <nav class="primary" aria-label="Primary menu">
+        <a href="/actors">Actors</a>
+        <a href="/actresses">Actresses</a>
+        <a href="/directors">Directors</a>
+        <a href="/producers">Producers</a>
+        <a href="/writers">Writers</a>
+        <a href="/movies">Movies</a>
+        <a href="/television">Television</a>
+        <a href="/awards">Awards</a>
+      </nav>
+
+      <label for="menu-toggle" class="menu-btn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="pp-hero" aria-labelledby="pp-hero-heading">
+  <div class="wrap">
+    <span class="eyebrow animate-in">Privacy Policy</span>
+    <h1 id="pp-hero-heading" class="animate-in d1"><span class="grad">Privacy Policy</span></h1>
+    <p class="lead animate-in d2">Your privacy is important to us. This Privacy Policy explains what information we collect, how we use it, and how we protect your data when you use CelebDossier.</p>
+    <span class="updated animate-in d3" id="last-updated">
+      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Last Updated: <time id="update-date">July 16, 2026</time>
+    </span>
+  </div>
+</section>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="wrap">
+  <div class="pp-layout">
+
+    <!-- ===== SIDEBAR: TABLE OF CONTENTS (Desktop) ===== -->
+    <aside class="toc" aria-label="Table of contents">
+      <div class="toc-inner">
+        <h3>Contents</h3>
+        <ol>
+          <li><a href="#introduction" data-section="introduction">Introduction</a></li>
+          <li><a href="#information-we-collect" data-section="information-we-collect">Information We Collect</a></li>
+          <li><a href="#how-we-use-information" data-section="how-we-use-information">How We Use Information</a></li>
+          <li><a href="#cookies" data-section="cookies">Cookies</a></li>
+          <li><a href="#advertising" data-section="advertising">Advertising</a></li>
+          <li><a href="#analytics" data-section="analytics">Analytics</a></li>
+          <li><a href="#third-party-services" data-section="third-party-services">Third-Party Services</a></li>
+          <li><a href="#third-party-links" data-section="third-party-links">Third-Party Links</a></li>
+          <li><a href="#data-security" data-section="data-security">Data Security</a></li>
+          <li><a href="#childrens-privacy" data-section="childrens-privacy">Children's Privacy</a></li>
+          <li><a href="#your-rights" data-section="your-rights">Your Rights</a></li>
+          <li><a href="#changes" data-section="changes">Changes to This Policy</a></li>
+          <li><a href="#contact" data-section="contact">Contact Us</a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT COLUMN ===== -->
+    <main class="pp-content">
+
+      <!-- Mobile ToC -->
+      <div class="toc-mobile" id="toc-mobile">
+        <button class="toc-mobile-toggle" id="toc-toggle" aria-expanded="false" aria-controls="toc-mobile-list">
+          Table of Contents
+          <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="toc-mobile-list" id="toc-mobile-list">
+          <ol>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#information-we-collect">Information We Collect</a></li>
+            <li><a href="#how-we-use-information">How We Use Information</a></li>
+            <li><a href="#cookies">Cookies</a></li>
+            <li><a href="#advertising">Advertising</a></li>
+            <li><a href="#analytics">Analytics</a></li>
+            <li><a href="#third-party-services">Third-Party Services</a></li>
+            <li><a href="#third-party-links">Third-Party Links</a></li>
+            <li><a href="#data-security">Data Security</a></li>
+            <li><a href="#childrens-privacy">Children's Privacy</a></li>
+            <li><a href="#your-rights">Your Rights</a></li>
+            <li><a href="#changes">Changes to This Policy</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- 01 · Introduction -->
+      <section class="pp-section" id="introduction" aria-labelledby="h-intro">
+        <div class="pp-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-intro">Introduction</h2>
+        </div>
+        <div class="pp-text">
+          <p>This Privacy Policy applies to all visitors and users of CelebDossier (<strong>celebdossier.com</strong>). It describes how we collect, use, store, and protect information when you access or interact with our website.</p>
+          <p>By accessing or using CelebDossier, you acknowledge that you have read, understood, and agree to the practices described in this Privacy Policy. If you do not agree with any part of this policy, we encourage you to discontinue use of the website.</p>
+          <p>We may update this Privacy Policy from time to time to reflect changes in our practices or applicable regulations. We encourage you to review this page periodically for the latest information.</p>
+        </div>
+      </section>
+
+      <hr class="pp-divider">
+
+      <!-- 02 · Information We Collect -->
+      <section class="pp-section" id="information-we-collect" aria-labelledby="h-collect">
+        <div class="pp-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-collect">Information We Collect</h2>
+        </div>
+
+        <div class="pp-card">
+          <h3>
+            <span class="ic purple" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            Personal Information
+          </h3>
+          <p>We do not require users to create accounts or provide personal information to browse CelebDossier. However, you may voluntarily provide certain information when contacting us, such as:</p>
+          <ul>
+            <li>Name</li>
+            <li>Email Address</li>
+            <li>Contact Information</li>
+          </ul>
+          <p>This information is only collected when you choose to submit it through our contact forms or email communication.</p>
+        </div>
+
+        <div class="pp-card">
+          <h3>
+            <span class="ic blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </span>
+            Automatically Collected Information
+          </h3>
+          <p>When you visit CelebDossier, certain information may be collected automatically through standard web technologies. This may include:</p>
+          <ul>
+            <li>IP Address</li>
+            <li>Browser Type</li>
+            <li>Device Information</li>
+            <li>Operating System</li>
+            <li>Referring Pages</li>
+            <li>Visited Pages</li>
+            <li>Date &amp; Time of Visit</li>
+            <li>Session Information</li>
+            <li>General Analytics Data</li>
+          </ul>
+          <p>This data is used in aggregate form to understand how visitors interact with the website and to improve overall performance.</p>
+        </div>
+      </section>
+
+      <hr class="pp-divider">
+
+      <!-- 03 · How We Use Information -->
+      <section class="pp-section" id="how-we-use-information" aria-labelledby="h-use">
+        <div class="pp-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-use">How We Use Information</h2>
+        </div>
+        <div class="pp-card">
+          <h3>
+            <span class="ic green" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </span>
+            Purpose of Data Usage
+          </h3>
+          <p>The information collected may be used for the following purposes:</p>
+          <ul>
+            <li>Improve website performance and reliability</li>
+            <li>Enhance and personalize user experience</li>
+            <li>Respond to user inquiries and feedback</li>
+            <li>Maintain website security and prevent abuse</li>
+            <li>Analyze visitor behavior and traffic patterns</li>
+            <li>Detect spam and malicious activity</li>
+            <li>Develop new features and content</li>
+            <li>Improve overall content quality and organization</li>
+          </ul>
+          <p>We do not sell, rent, or trade personal information to third parties for marketing purposes.</p>
+        </div>
+      </section>
+
+      <hr class="pp-divider">
+
+      <!-- 04 · Cookies -->
+      <section class="pp-section" id="cookies" aria-labelledby="h-cookies">
+        <div class="pp-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-cookies">Cookies</h2>
+        </div>
+        <div class="pp-card">
+          <h3>
+            <span class="ic gold" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="8" cy="9" r="1" fill="var(--gold)"/><circle cx="15" cy="8" r="1" fill="var(--gold)"/><circle cx="10" cy="14" r="1" fill="var(--gold)"/><circle cx="15" cy="14" r="1" fill="var(--gold)"/></svg>
+            </span>
+            How We Use Cookies
+          </h3>
+          <p>CelebDossier may use cookies — small text files stored on your device — to enhance your experience. Cookies help us to:</p>
+          <ul>
+            <li>Remember user preferences and settings</li>
+            <li>Improve website functionality and navigation</li>
+            <li>Measure website performance and load times</li>
+            <li>Understand visitor behavior and usage patterns</li>
+            <li>Provide more personalized browsing experiences</li>
+          </ul>
+          <p>You can control or disable cookies through your browser settings at any time. Please note that disabling cookies may affect certain features or functionality of the website.</p>
+        </div>
+      </section>
+
+      <hr class="pp-divider">
+
+      <!-- 05 · Advertising (Google AdSense) -->
+      <section class="pp-section" id="advertising" aria-labelledby="h-ads">
+        <div class="pp-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-ads">Advertising</h2>
+        </div>
+        <div class="pp-card">
+          <h3>
+            <span class="ic pink" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="var(--brand-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 2l-4 5-4-5"/></svg>
+            </span>
+            Google AdSense
+          </h3>
+          <p>CelebDossier may display advertisements served through Google AdSense, a third-party advertising service provided by Google LLC.</p>
+          <p>Google may use cookies to serve advertisements based on your previous visits to this website or other websites on the internet. Third-party vendors, including Google, may use cookies to serve personalized or non-personalized advertisements depending on your preferences and applicable regulations.</p>
+          <p>You can manage your advertising preferences and opt out of personalized advertising through <strong>Google's Ad Settings</strong> at any time. You may also visit the <strong>Network Advertising Initiative opt-out page</strong> to manage third-party advertising cookies.</p>
+          <p>For more information about how Google uses data when you use partner sites, please refer to Google's Privacy &amp; Terms page.</p>
+        </div>
+      </section>
+
+      <hr class="pp-divider">
+
+      <!-- 06 · Analytics -->
+      <section class="pp-section" id="analytics" aria-labelledby="h-analytics">
+        <div class="pp-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-analytics">Analytics</h2>
+        </div>
+        <div class="pp-card">
+          <h3>
+            <span class="ic purple" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </span>
+            Google Analytics
+          </h3>
+          <p>CelebDossier may use Google Analytics, a web analytics service provided by Google LLC, to help understand how visitors interact with the website. Google Analytics uses cookies and collects aggregated data including:</p>
+          <ul>
+            <li>Number of visitors and sessions</li>
+            <li>Traffic sources and referral information</li>
+            <li>Most popular pages and content</li>
+            <li>User engagement metrics</li>
+            <li>Device and browser usage statistics</li>
+          </ul>
+          <p>All analytics information is collected in aggregate form and is used solely to improve the website's content, structure, and overall user experience. No personally identifiable information is associated with analytics data.</p>
+        </div>
+      </section>
+
+      <hr class="pp-divider">
+
+      <!-- 07 · Third-Party Services -->
+      <section class="pp-section" id="third-party-services" aria-labelledby="h-tps">
+        <div class="pp-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-tps">Third-Party Services</h2>
+        </div>
+        <div class="pp-card">
+          <h3>
+            <span class="ic blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </span>
+            Services We May Use
+          </h3>
+          <p>CelebDossier may use trusted third-party services to support the operation, performance, and functionality of the website. These services may include, where applicable:</p>
+          <ul>
+            <li>Google Analytics — for website analytics and visitor insights</li>
+            <li>Google AdSense — for advertising and monetization</li>
+            <li>Cloudflare — for security, performance, and content delivery</li>
+            <li>Content Delivery Networks (CDNs) — for faster asset loading</li>
+            <li>Social Media Platforms — for content sharing and embeds</li>
+          </ul>
+          <p>Each of these third-party services operates under its own privacy policy and terms of service. We encourage you to review the privacy policies of any third-party services you interact with through our website.</p>
+        </div>
+      </section>
+
+      <hr class="pp-divider">
+
+      <!-- 08 · Third-Party Links -->
+      <section class="pp-section" id="third-party-links" aria-labelledby="h-tpl">
+        <div class="pp-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-tpl">Third-Party Links</h2>
+        </div>
+        <div class="pp-text">
+          <p>CelebDossier may contain links to external websites, services, or resources that are not operated or controlled by us. These links are provided for convenience and informational purposes only.</p>
+          <p>We are not responsible for the content, privacy practices, or policies of any third-party websites. We encourage you to review the privacy policy of every website you visit. Clicking on a third-party link or visiting a third-party website is done entirely at your own discretion and risk.</p>
+        </div>
+      </section>
+
+      <hr class="pp-divider">
+
+      <!-- 09 · Data Security -->
+      <section class="pp-section" id="data-security" aria-labelledby="h-security">
+        <div class="pp-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-security">Data Security</h2>
+        </div>
+        <div class="pp-card">
+          <h3>
+            <span class="ic green" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            Protecting Your Information
+          </h3>
+          <p>We take the security of your information seriously. CelebDossier employs reasonable technical and organizational measures to protect user information against unauthorized access, alteration, disclosure, or destruction.</p>
+          <p>However, please be aware that no method of internet transmission or electronic storage is guaranteed to be 100% secure. While we strive to use commercially acceptable means to protect your information, we cannot guarantee its absolute security.</p>
+        </div>
+      </section>
+
+      <hr class="pp-divider">
+
+      <!-- 10 · Children's Privacy -->
+      <section class="pp-section" id="childrens-privacy" aria-labelledby="h-children">
+        <div class="pp-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-children">Children's Privacy</h2>
+        </div>
+        <div class="pp-text">
+          <p>CelebDossier is not intended for children under the age of 13. We do not knowingly collect, solicit, or store personal information from anyone under the age of 13.</p>
+          <p>If we become aware that we have inadvertently collected personal information from a child under 13, we will take steps to remove that information from our records as soon as reasonably possible. If you believe that a child under 13 has provided us with personal information, please contact us through our <a href="/contact-us" style="color: var(--brand); border-bottom: 1px solid rgba(139,92,246,0.3);">Contact page</a> so we can take appropriate action.</p>
+        </div>
+      </section>
+
+      <hr class="pp-divider">
+
+      <!-- 11 · Your Rights -->
+      <section class="pp-section" id="your-rights" aria-labelledby="h-rights">
+        <div class="pp-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-rights">Your Rights</h2>
+        </div>
+        <p style="color: var(--muted); font-size: 0.94rem; margin: 0 0 16px; line-height: 1.7;">Depending on your jurisdiction, you may have certain rights regarding your personal information. You may request:</p>
+        <div class="rights-grid">
+          <div class="right-card">
+            <div class="right-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <h3>Access</h3>
+            <p>Request access to the personal information we hold about you.</p>
+          </div>
+          <div class="right-card">
+            <div class="right-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="var(--brand-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            <h3>Correction</h3>
+            <p>Request correction of inaccurate or incomplete information.</p>
+          </div>
+          <div class="right-card">
+            <div class="right-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            </div>
+            <h3>Deletion</h3>
+            <p>Request deletion of your personal information from our records.</p>
+          </div>
+          <div class="right-card">
+            <div class="right-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            </div>
+            <h3>Consent Withdrawal</h3>
+            <p>Withdraw consent where applicable under your local laws.</p>
+          </div>
+        </div>
+        <p style="color: var(--muted); font-size: 0.88rem; margin: 16px 0 0; line-height: 1.7;">To exercise any of these rights, please contact us through our <a href="/contact-us" style="color: var(--brand); border-bottom: 1px solid rgba(139,92,246,0.3);">Contact page</a>. We will respond to your request within a reasonable timeframe.</p>
+      </section>
+
+      <hr class="pp-divider">
+
+      <!-- 12 · Changes to This Policy -->
+      <section class="pp-section" id="changes" aria-labelledby="h-changes">
+        <div class="pp-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-changes">Changes to This Privacy Policy</h2>
+        </div>
+        <div class="pp-text">
+          <p>We reserve the right to update or modify this Privacy Policy at any time. Any changes will be posted on this page with a revised "Last Updated" date at the top of the policy.</p>
+          <p>Changes to this Privacy Policy become effective immediately upon publication unless otherwise stated. Your continued use of CelebDossier after any changes constitutes your acceptance of the updated policy.</p>
+          <p>We encourage you to review this Privacy Policy periodically to stay informed about how we protect your information.</p>
+        </div>
+      </section>
+
+      <hr class="pp-divider">
+
+      <!-- 13 · Contact Us CTA -->
+      <section class="pp-section" id="contact" aria-labelledby="h-contact">
+        <div class="pp-cta">
+          <h2 id="h-contact">Contact Us</h2>
+          <p>If you have any questions regarding this Privacy Policy or how your information is handled, please contact us through our Contact page.</p>
+          <a class="btn btn-primary" href="/contact-us" id="pp-contact-btn">Contact Us</a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <a class="logo" href="/" style="margin-bottom:12px;">
+          <span class="dot">CD</span><span>Celeb<b>Dossier</b></span>
+        </a>
+        <p>An original entertainment knowledge base. Evergreen biographies, movie pages, TV guides, and award coverage, written to stay useful for years.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Categories</h4>
+        <a href="/actors">Actors</a>
+        <a href="/actresses">Actresses</a>
+        <a href="/directors">Directors</a>
+        <a href="/producers">Producers</a>
+        <a href="/writers">Writers</a>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="/movies">Movies</a>
+        <a href="/television">Television</a>
+        <a href="/awards">Awards</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="/about-us">About Us</a>
+        <a href="/contact-us">Contact Us</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/disclaimer">Disclaimer</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 CelebDossier.com. All rights reserved.</span>
+      <span>Made for entertainment fans worldwide.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Dynamic "Last Updated" date
+  (function() {
+    var el = document.getElementById('update-date');
+    if (el) {
+      var d = new Date();
+      var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      el.textContent = months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+      el.setAttribute('datetime', d.toISOString().slice(0,10));
+    }
+  })();
+
+  // Mobile ToC toggle
+  (function() {
+    var btn = document.getElementById('toc-toggle');
+    var list = document.getElementById('toc-mobile-list');
+    if (btn && list) {
+      btn.addEventListener('click', function() {
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        list.classList.toggle('open');
+      });
+      // Close mobile ToC when a link is clicked
+      list.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+          btn.setAttribute('aria-expanded', 'false');
+          list.classList.remove('open');
+        });
+      });
+    }
+  })();
+
+  // Sticky ToC active state tracking
+  (function() {
+    var tocLinks = document.querySelectorAll('.toc a[data-section]');
+    if (!tocLinks.length) return;
+    var sections = [];
+    tocLinks.forEach(function(link) {
+      var id = link.getAttribute('data-section');
+      var sec = document.getElementById(id);
+      if (sec) sections.push({ id: id, el: sec, link: link });
+    });
+
+    function updateActive() {
+      var scrollTop = window.scrollY + 140;
+      var current = null;
+      for (var i = sections.length - 1; i >= 0; i--) {
+        if (sections[i].el.offsetTop <= scrollTop) {
+          current = sections[i]; break;
+        }
+      }
+      tocLinks.forEach(function(l) { l.classList.remove('active'); });
+      if (current) current.link.classList.add('active');
+    }
+
+    var ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(function() { updateActive(); ticking = false; });
+        ticking = true;
+      }
+    }, { passive: true });
+    updateActive();
+  })();
+</script>
+
+</body>
+</html>

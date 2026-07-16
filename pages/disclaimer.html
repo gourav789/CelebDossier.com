@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Disclaimer | CelebDossier</title>
+<meta name="description" content="Read the CelebDossier Disclaimer to understand the limitations of liability, content accuracy, editorial practices, advertisements, affiliate disclosure, and user responsibilities.">
+<link rel="canonical" href="https://celebdossier.com/disclaimer">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Disclaimer | CelebDossier">
+<meta property="og:description" content="Read the CelebDossier Disclaimer to understand the limitations of liability, content accuracy, editorial practices, advertisements, affiliate disclosure, and user responsibilities.">
+<meta property="og:url" content="https://celebdossier.com/disclaimer">
+<meta property="og:image" content="https://celebdossier.com/images/celebdossier-cover.jpg">
+
+<style>
+  /* ========== DESIGN TOKENS (homepage) ========== */
+  :root {
+    --bg: #0e0b18;
+    --bg-2: #141022;
+    --surface: #1b1630;
+    --surface-2: #241d3d;
+    --line: #302748;
+    --text: #f2effa;
+    --muted: #a79fc6;
+    --brand: #8b5cf6;
+    --brand-2: #ec4899;
+    --gold: #f6c453;
+    --radius: 16px;
+    --maxw: 1200px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+  .visually-hidden {
+    position: absolute !important; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0);
+    white-space: nowrap; border: 0;
+  }
+
+  /* ========== TOP (SECONDARY) BAR ========== */
+  .topbar {
+    background: #0a0812;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.82rem;
+  }
+  .topbar .wrap { display: flex; justify-content: space-between; align-items: center; min-height: 40px; padding-top: 8px; padding-bottom: 8px; gap: 14px; flex-wrap: wrap; }
+  .topbar nav { display: flex; gap: 18px; }
+  .topbar a { color: var(--muted); }
+  .topbar a:hover { color: var(--gold); }
+  .topbar .greet { color: var(--muted); }
+
+  /* ========== HEADER + PRIMARY NAV ========== */
+  header.site {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(14,11,24,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar { display: flex; align-items: center; justify-content: space-between; height: 66px; gap: 16px; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; }
+  .logo .dot {
+    width: 30px; height: 30px; border-radius: 9px;
+    background: linear-gradient(135deg, var(--brand), var(--brand-2));
+    display: inline-flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 0.95rem;
+  }
+  .logo b { color: var(--gold); }
+
+  .primary { display: flex; align-items: center; gap: 4px; }
+  .primary a {
+    color: var(--muted); font-size: 0.92rem; font-weight: 500;
+    padding: 8px 12px; border-radius: 9px;
+  }
+  .primary a:hover { color: var(--text); background: var(--surface); }
+
+  .menu-toggle, .menu-btn { display: none; }
+  .menu-btn {
+    width: 44px; height: 40px; border-radius: 10px; border: 1px solid var(--line);
+    background: var(--surface); cursor: pointer; align-items: center; justify-content: center;
+    flex-direction: column; gap: 4px;
+  }
+  .menu-btn span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; }
+
+  /* ========== SHARED ========== */
+  .eyebrow {
+    display: inline-block; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid var(--line); padding: 5px 12px; border-radius: 999px; margin-bottom: 16px;
+    background: rgba(0,0,0,0.2);
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 20px; border-radius: 11px; font-weight: 600; font-size: 0.95rem; cursor: pointer;
+    border: none; transition: filter 0.15s ease, background 0.15s ease;
+  }
+  .btn-primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #fff; }
+  .btn-primary:hover { filter: brightness(1.08); }
+
+  /* ========== FOOTER ========== */
+  footer.site {
+    margin-top: 40px; background: #0a0812; border-top: 1px solid var(--line);
+    padding: 44px 0 30px;
+  }
+  .foot-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
+  .foot-col h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin: 0 0 12px; }
+  .foot-col a { display: block; color: var(--muted); font-size: 0.9rem; padding: 4px 0; }
+  .foot-col a:hover { color: var(--text); }
+  .foot-col p { color: var(--muted); font-size: 0.9rem; margin: 0; }
+  .foot-bottom { border-top: 1px solid var(--line); margin-top: 30px; padding-top: 20px; color: var(--muted); font-size: 0.82rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+  /* ========== DISCLAIMER HERO ========== */
+  .dc-hero {
+    position: relative;
+    background:
+      radial-gradient(900px 500px at 15% -20%, rgba(139,92,246,0.35), transparent),
+      radial-gradient(800px 500px at 95% 0%, rgba(236,72,153,0.25), transparent),
+      var(--bg-2);
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+    padding: 58px 0 52px;
+    text-align: center;
+  }
+  .dc-hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(2px 2px at 18% 28%, rgba(246,196,83,0.14), transparent),
+      radial-gradient(2px 2px at 60% 18%, rgba(236,72,153,0.1), transparent),
+      radial-gradient(2px 2px at 82% 60%, rgba(246,196,83,0.1), transparent),
+      radial-gradient(2px 2px at 12% 78%, rgba(139,92,246,0.08), transparent);
+    pointer-events: none;
+  }
+  .dc-hero h1 {
+    font-size: 2.2rem; line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.02em;
+    position: relative;
+  }
+  .dc-hero h1 .grad {
+    background: linear-gradient(120deg, var(--brand), var(--brand-2), var(--gold));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .dc-hero .lead {
+    color: var(--muted); font-size: 1.05rem; margin: 0 auto 18px; max-width: 660px;
+    position: relative;
+  }
+  .dc-hero .updated {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.8rem; color: var(--muted);
+    background: var(--surface); border: 1px solid var(--line);
+    padding: 6px 14px; border-radius: 999px;
+    position: relative;
+  }
+  .dc-hero .updated svg { width: 14px; height: 14px; stroke: var(--gold); fill: none; flex-shrink: 0; }
+
+  /* ========== TWO-COLUMN LAYOUT ========== */
+  .dc-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    align-items: start;
+  }
+
+  /* ========== TABLE OF CONTENTS (Desktop) ========== */
+  .toc { display: none; }
+  .toc-inner {
+    position: sticky; top: 90px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 24px 22px;
+  }
+  .toc h3 {
+    font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--gold); margin: 0 0 14px;
+  }
+  .toc ol {
+    list-style: none; padding: 0; margin: 0; counter-reset: toc;
+  }
+  .toc li { counter-increment: toc; }
+  .toc a {
+    display: flex; align-items: center; gap: 10px;
+    color: var(--muted); font-size: 0.85rem; padding: 6px 10px;
+    border-radius: 8px; transition: all 0.15s ease;
+  }
+  .toc a::before {
+    content: counter(toc, decimal-leading-zero);
+    font-size: 0.72rem; font-weight: 700; color: var(--line);
+    min-width: 20px; transition: color 0.15s ease;
+  }
+  .toc a:hover { color: var(--text); background: var(--surface-2); }
+  .toc a:hover::before { color: var(--brand); }
+  .toc a.active { color: var(--text); background: var(--surface-2); }
+  .toc a.active::before { color: var(--brand); }
+
+  /* Mobile ToC */
+  .toc-mobile {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+  .toc-mobile-toggle {
+    width: 100%; display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px; background: none; border: none; color: var(--text);
+    font-size: 0.95rem; font-weight: 600; cursor: pointer;
+    font-family: inherit;
+  }
+  .toc-mobile-toggle svg {
+    width: 18px; height: 18px; stroke: var(--muted); fill: none;
+    transition: transform 0.2s ease;
+  }
+  .toc-mobile-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+  .toc-mobile-list { display: none; padding: 0 20px 16px; }
+  .toc-mobile-list.open { display: block; }
+  .toc-mobile-list ol {
+    list-style: none; padding: 0; margin: 0; counter-reset: toc-m;
+  }
+  .toc-mobile-list li { counter-increment: toc-m; }
+  .toc-mobile-list a {
+    display: flex; align-items: center; gap: 10px;
+    color: var(--muted); font-size: 0.86rem; padding: 8px 10px;
+    border-radius: 8px; transition: all 0.15s ease;
+  }
+  .toc-mobile-list a::before {
+    content: counter(toc-m, decimal-leading-zero);
+    font-size: 0.72rem; font-weight: 700; color: var(--line); min-width: 20px;
+  }
+  .toc-mobile-list a:hover { color: var(--text); background: var(--surface-2); }
+
+  /* ========== CONTENT SECTIONS ========== */
+  .dc-content { min-width: 0; }
+
+  .dc-section {
+    margin-bottom: 32px;
+    scroll-margin-top: 100px;
+  }
+  .dc-section-head {
+    display: flex; align-items: center; gap: 11px;
+    margin-bottom: 14px;
+  }
+  .dc-section-head .pip {
+    width: 10px; height: 24px; border-radius: 4px; flex-shrink: 0;
+    background: linear-gradient(180deg, var(--brand), var(--brand-2));
+  }
+  .dc-section-head h2 {
+    font-size: 1.4rem; margin: 0; letter-spacing: -0.01em;
+  }
+
+  .dc-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 26px 24px;
+    margin-bottom: 16px;
+    transition: border-color 0.15s ease;
+  }
+  .dc-card:hover { border-color: rgba(139,92,246,0.3); }
+  .dc-card:last-child { margin-bottom: 0; }
+
+  .dc-card h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 1.08rem; margin: 0 0 12px;
+  }
+  .dc-card h3 .ic {
+    width: 36px; height: 36px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; border: 1px solid var(--line);
+  }
+  .dc-card h3 .ic svg { width: 18px; height: 18px; fill: none; }
+  .dc-card h3 .ic.purple { background: linear-gradient(135deg, rgba(139,92,246,0.18), rgba(139,92,246,0.06)); }
+  .dc-card h3 .ic.pink { background: linear-gradient(135deg, rgba(236,72,153,0.18), rgba(236,72,153,0.06)); }
+  .dc-card h3 .ic.gold { background: linear-gradient(135deg, rgba(246,196,83,0.2), rgba(246,196,83,0.06)); }
+  .dc-card h3 .ic.blue { background: linear-gradient(135deg, rgba(56,189,248,0.2), rgba(56,189,248,0.06)); }
+  .dc-card h3 .ic.green { background: linear-gradient(135deg, rgba(52,211,153,0.2), rgba(52,211,153,0.06)); }
+  .dc-card h3 .ic.red { background: linear-gradient(135deg, rgba(248,113,113,0.2), rgba(248,113,113,0.06)); }
+
+  .dc-card p, .dc-text p {
+    color: var(--muted); font-size: 0.94rem; margin: 0 0 12px; line-height: 1.75;
+  }
+  .dc-card p:last-child, .dc-text p:last-child { margin-bottom: 0; }
+
+  .dc-text {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 26px 24px;
+    transition: border-color 0.15s ease;
+  }
+  .dc-text:hover { border-color: rgba(139,92,246,0.3); }
+
+  .dc-divider {
+    border: none; border-top: 1px solid var(--line);
+    margin: 6px 0 32px;
+  }
+
+  /* CTA */
+  .dc-cta {
+    margin: 10px 0;
+    background: linear-gradient(135deg, rgba(139,92,246,0.18), rgba(236,72,153,0.14));
+    border: 1px solid var(--line); border-radius: 22px; padding: 36px 26px; text-align: center;
+  }
+  .dc-cta h2 { margin: 0 0 8px; font-size: 1.4rem; }
+  .dc-cta p { color: var(--muted); margin: 0 auto 20px; max-width: 520px; font-size: 0.95rem; }
+
+  /* Inline link style */
+  .inline-link {
+    color: var(--brand);
+    border-bottom: 1px solid rgba(139,92,246,0.3);
+    transition: border-color 0.15s ease;
+  }
+  .inline-link:hover { border-color: var(--brand); }
+
+  /* ========== ANIMATIONS ========== */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-in { opacity: 0; animation: fadeInUp 0.55s ease forwards; }
+  .animate-in.d1 { animation-delay: 0.08s; }
+  .animate-in.d2 { animation-delay: 0.16s; }
+  .animate-in.d3 { animation-delay: 0.24s; }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 860px) {
+    .primary {
+      position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column; align-items: stretch; gap: 2px;
+      background: var(--bg-2); border-bottom: 1px solid var(--line);
+      padding: 12px 20px 20px; transform: translateY(-140%); transition: transform 0.25s ease;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .primary a { padding: 12px; border-radius: 10px; }
+    .menu-toggle:checked ~ .primary { transform: translateY(0); }
+    .menu-btn { display: flex; }
+  }
+
+  @media (min-width: 720px) {
+    .dc-hero h1 { font-size: 2.8rem; }
+    .dc-hero { padding: 72px 0 62px; }
+  }
+
+  @media (min-width: 920px) {
+    .dc-layout {
+      grid-template-columns: 240px 1fr;
+      gap: 36px;
+    }
+    .toc { display: block; }
+    .toc-mobile { display: none; }
+  }
+
+  @media (min-width: 980px) {
+    .foot-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+    .dc-hero h1 { font-size: 3rem; }
+  }
+
+  @media (min-width: 1060px) {
+    .dc-layout { grid-template-columns: 260px 1fr; gap: 42px; }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- ===== SECONDARY (TOP) MENU ===== -->
+<div class="topbar">
+  <div class="wrap">
+    <span class="greet">Your premium entertainment knowledge base</span>
+    <nav aria-label="Secondary menu">
+      <a href="/about-us">About Us</a>
+      <a href="/contact-us">Contact Us</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/disclaimer">Disclaimer</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ===== HEADER + PRIMARY MENU ===== -->
+<header class="site">
+  <div class="wrap">
+    <div class="bar">
+      <a class="logo" href="/">
+        <span class="dot">CD</span>
+        <span>Celeb<b>Dossier</b></span>
+      </a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
+      <nav class="primary" aria-label="Primary menu">
+        <a href="/actors">Actors</a>
+        <a href="/actresses">Actresses</a>
+        <a href="/directors">Directors</a>
+        <a href="/producers">Producers</a>
+        <a href="/writers">Writers</a>
+        <a href="/movies">Movies</a>
+        <a href="/television">Television</a>
+        <a href="/awards">Awards</a>
+      </nav>
+
+      <label for="menu-toggle" class="menu-btn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="dc-hero" aria-labelledby="dc-hero-heading">
+  <div class="wrap">
+    <span class="eyebrow animate-in">Disclaimer</span>
+    <h1 id="dc-hero-heading" class="animate-in d1"><span class="grad">Website Disclaimer</span></h1>
+    <p class="lead animate-in d2">This Disclaimer explains the limitations of liability, the nature of the information published on CelebDossier, and the responsibilities of visitors while using our website.</p>
+    <span class="updated animate-in d3" id="last-updated">
+      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Last Updated: <time id="update-date">July 16, 2026</time>
+    </span>
+  </div>
+</section>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="wrap">
+  <div class="dc-layout">
+
+    <!-- ===== SIDEBAR: TABLE OF CONTENTS (Desktop) ===== -->
+    <aside class="toc" aria-label="Table of contents">
+      <div class="toc-inner">
+        <h3>Contents</h3>
+        <ol>
+          <li><a href="#general-disclaimer" data-section="general-disclaimer">General Disclaimer</a></li>
+          <li><a href="#information-accuracy" data-section="information-accuracy">Information Accuracy</a></li>
+          <li><a href="#editorial-content" data-section="editorial-content">Editorial Content</a></li>
+          <li><a href="#entertainment-content" data-section="entertainment-content">Entertainment Content</a></li>
+          <li><a href="#no-professional-advice" data-section="no-professional-advice">No Professional Advice</a></li>
+          <li><a href="#external-links" data-section="external-links">External Links</a></li>
+          <li><a href="#copyright-fair-use" data-section="copyright-fair-use">Copyright &amp; Fair Use</a></li>
+          <li><a href="#advertisements" data-section="advertisements">Advertisements</a></li>
+          <li><a href="#affiliate-disclosure" data-section="affiliate-disclosure">Affiliate Disclosure</a></li>
+          <li><a href="#limitation-of-liability" data-section="limitation-of-liability">Limitation of Liability</a></li>
+          <li><a href="#user-responsibility" data-section="user-responsibility">User Responsibility</a></li>
+          <li><a href="#changes" data-section="changes">Changes to Disclaimer</a></li>
+          <li><a href="#contact" data-section="contact">Contact Us</a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT COLUMN ===== -->
+    <main class="dc-content">
+
+      <!-- Mobile ToC -->
+      <div class="toc-mobile" id="toc-mobile">
+        <button class="toc-mobile-toggle" id="toc-toggle" aria-expanded="false" aria-controls="toc-mobile-list">
+          Table of Contents
+          <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="toc-mobile-list" id="toc-mobile-list">
+          <ol>
+            <li><a href="#general-disclaimer">General Disclaimer</a></li>
+            <li><a href="#information-accuracy">Information Accuracy</a></li>
+            <li><a href="#editorial-content">Editorial Content</a></li>
+            <li><a href="#entertainment-content">Entertainment Content</a></li>
+            <li><a href="#no-professional-advice">No Professional Advice</a></li>
+            <li><a href="#external-links">External Links</a></li>
+            <li><a href="#copyright-fair-use">Copyright &amp; Fair Use</a></li>
+            <li><a href="#advertisements">Advertisements</a></li>
+            <li><a href="#affiliate-disclosure">Affiliate Disclosure</a></li>
+            <li><a href="#limitation-of-liability">Limitation of Liability</a></li>
+            <li><a href="#user-responsibility">User Responsibility</a></li>
+            <li><a href="#changes">Changes to Disclaimer</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- 01 · General Disclaimer -->
+      <section class="dc-section" id="general-disclaimer" aria-labelledby="h-general">
+        <div class="dc-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-general">General Disclaimer</h2>
+        </div>
+        <div class="dc-card">
+          <h3>
+            <span class="ic purple" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            Overview
+          </h3>
+          <p>CelebDossier is an independent entertainment information website. All information published on the website is provided in good faith and is intended for general informational and educational purposes only.</p>
+          <p>While every effort is made to keep content accurate and up to date, CelebDossier makes no guarantees, representations, or warranties of any kind — express or implied — regarding the completeness, reliability, accuracy, suitability, or availability of any information, content, or materials published on the website.</p>
+          <p>Any reliance you place on the information provided on this website is strictly at your own discretion and risk. CelebDossier shall not be held liable for any loss or damage arising from the use of or reliance on the content of this website.</p>
+        </div>
+      </section>
+
+      <hr class="dc-divider">
+
+      <!-- 02 · Information Accuracy -->
+      <section class="dc-section" id="information-accuracy" aria-labelledby="h-accuracy">
+        <div class="dc-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-accuracy">Information Accuracy</h2>
+        </div>
+        <div class="dc-card">
+          <h3>
+            <span class="ic blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </span>
+            Our Commitment to Accuracy
+          </h3>
+          <p>Content on CelebDossier is created using publicly available information sourced from reliable and trusted references whenever possible. Our editorial team works to ensure that published content is accurate, well-organized, and helpful to readers.</p>
+          <p>However, information related to biographies, career details, awards, television projects, movie appearances, and other entertainment-related facts may change over time. While we regularly review and update content, temporary inaccuracies or outdated information may occasionally appear on the website.</p>
+          <p>If you notice any inaccuracies, we encourage you to contact us through our <a href="/contact-us" class="inline-link">Contact page</a> so we can review and correct the information promptly.</p>
+        </div>
+      </section>
+
+      <hr class="dc-divider">
+
+      <!-- 03 · Editorial Content -->
+      <section class="dc-section" id="editorial-content" aria-labelledby="h-editorial">
+        <div class="dc-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-editorial">Editorial Content</h2>
+        </div>
+        <div class="dc-card">
+          <h3>
+            <span class="ic pink" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="var(--brand-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </span>
+            Editorial Standards
+          </h3>
+          <p>Articles, profiles, timelines, and informational pages published on CelebDossier are created for informational purposes only. All content represents editorial research and organization of publicly available information.</p>
+          <p>CelebDossier does not claim affiliation with, endorsement by, or sponsorship from any individual, organization, production company, broadcaster, streaming platform, or entertainment business unless explicitly stated on the website.</p>
+        </div>
+      </section>
+
+      <hr class="dc-divider">
+
+      <!-- 04 · Entertainment Content -->
+      <section class="dc-section" id="entertainment-content" aria-labelledby="h-entertainment">
+        <div class="dc-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-entertainment">Entertainment Content</h2>
+        </div>
+        <div class="dc-card">
+          <h3>
+            <span class="ic gold" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+            </span>
+            Scope of Content
+          </h3>
+          <p>CelebDossier focuses exclusively on entertainment-related information. The website publishes profiles, biographies, career timelines, award histories, production details, and other entertainment-related content designed to help readers better understand publicly available entertainment information.</p>
+          <p>All content is curated and organized with the sole purpose of creating an informative, reader-friendly entertainment knowledge platform.</p>
+        </div>
+      </section>
+
+      <hr class="dc-divider">
+
+      <!-- 05 · No Professional Advice -->
+      <section class="dc-section" id="no-professional-advice" aria-labelledby="h-advice">
+        <div class="dc-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-advice">No Professional Advice</h2>
+        </div>
+        <div class="dc-card">
+          <h3>
+            <span class="ic red" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="#f87171" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </span>
+            Important Notice
+          </h3>
+          <p>Nothing published on CelebDossier should be interpreted or construed as legal, financial, medical, tax, investment, or any other form of professional advice.</p>
+          <p>The content provided on this website is for general informational purposes only. Visitors are strongly encouraged to consult qualified professionals before making any decisions based on information found on this website.</p>
+        </div>
+      </section>
+
+      <hr class="dc-divider">
+
+      <!-- 06 · External Links -->
+      <section class="dc-section" id="external-links" aria-labelledby="h-links">
+        <div class="dc-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-links">External Links</h2>
+        </div>
+        <div class="dc-card">
+          <h3>
+            <span class="ic blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </span>
+            Third-Party Websites
+          </h3>
+          <p>CelebDossier may contain links to third-party websites and external resources provided for additional information, reference, or convenience. These links do not imply endorsement, sponsorship, or affiliation with any third-party website or organization.</p>
+          <p>CelebDossier has no control over the content, availability, security, privacy practices, or accuracy of external websites. Visiting external websites linked from CelebDossier is entirely at your own risk and discretion.</p>
+          <p>We encourage visitors to review the terms of service and privacy policies of any third-party website they choose to visit.</p>
+        </div>
+      </section>
+
+      <hr class="dc-divider">
+
+      <!-- 07 · Copyright & Fair Use -->
+      <section class="dc-section" id="copyright-fair-use" aria-labelledby="h-copyright">
+        <div class="dc-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-copyright">Copyright &amp; Fair Use</h2>
+        </div>
+        <div class="dc-card">
+          <h3>
+            <span class="ic purple" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M14.83 14.83a4 4 0 1 1 0-5.66"/></svg>
+            </span>
+            Intellectual Property
+          </h3>
+          <p>All trademarks, logos, brand names, service marks, and copyrighted materials referenced on CelebDossier belong to their respective owners. CelebDossier does not claim ownership of any third-party intellectual property.</p>
+          <p>Any referenced material is used strictly for informational, editorial, commentary, or educational purposes where applicable under fair use principles.</p>
+          <p>If any copyright owner believes that material published on CelebDossier has been used improperly or infringes upon their rights, they are encouraged to contact us through our <a href="/contact-us" class="inline-link">Contact page</a> for prompt review and appropriate action.</p>
+        </div>
+      </section>
+
+      <hr class="dc-divider">
+
+      <!-- 08 · Advertisements -->
+      <section class="dc-section" id="advertisements" aria-labelledby="h-ads">
+        <div class="dc-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-ads">Advertisements</h2>
+        </div>
+        <div class="dc-card">
+          <h3>
+            <span class="ic pink" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="var(--brand-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 2l-4 5-4-5"/></svg>
+            </span>
+            Advertising Partners
+          </h3>
+          <p>CelebDossier may display advertisements from advertising partners, including but not limited to Google AdSense. These advertisements help support the ongoing operation, development, and maintenance of the website.</p>
+          <p>Advertisements shown on the website may be personalized or non-personalized depending on user preferences, browser settings, and applicable regulations in your jurisdiction.</p>
+          <p>CelebDossier is not responsible for the products, services, accuracy, or claims made by advertisers. Interactions with advertisers, including any purchases or agreements, are solely between the visitor and the advertiser.</p>
+        </div>
+      </section>
+
+      <hr class="dc-divider">
+
+      <!-- 09 · Affiliate Disclosure -->
+      <section class="dc-section" id="affiliate-disclosure" aria-labelledby="h-affiliate">
+        <div class="dc-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-affiliate">Affiliate Disclosure</h2>
+        </div>
+        <div class="dc-card">
+          <h3>
+            <span class="ic green" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </span>
+            Affiliate Partnerships
+          </h3>
+          <p>Some pages on CelebDossier may contain affiliate links in the future. If a visitor clicks on an affiliate link and subsequently purchases a product or service, CelebDossier may earn a small commission at no additional cost to the visitor.</p>
+          <p>Affiliate partnerships are carefully selected and never influence the editorial integrity, accuracy, or quality of the content published on the website. Our editorial decisions are made independently of any commercial relationships.</p>
+        </div>
+      </section>
+
+      <hr class="dc-divider">
+
+      <!-- 10 · Limitation of Liability -->
+      <section class="dc-section" id="limitation-of-liability" aria-labelledby="h-liability">
+        <div class="dc-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-liability">Limitation of Liability</h2>
+        </div>
+        <div class="dc-card">
+          <h3>
+            <span class="ic red" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="#f87171" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </span>
+            Liability Limitations
+          </h3>
+          <p>CelebDossier, its owner, contributors, editors, and administrators shall not be held liable for any direct, indirect, incidental, consequential, special, or punitive damages arising from the use of or inability to use the website, or from reliance on any information or content published on it.</p>
+          <p>This limitation of liability applies to the fullest extent permitted by applicable law, regardless of whether such damages arise from contract, tort, negligence, strict liability, or any other legal theory.</p>
+          <p>Users access and use CelebDossier and its content entirely at their own risk.</p>
+        </div>
+      </section>
+
+      <hr class="dc-divider">
+
+      <!-- 11 · User Responsibility -->
+      <section class="dc-section" id="user-responsibility" aria-labelledby="h-user">
+        <div class="dc-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-user">User Responsibility</h2>
+        </div>
+        <div class="dc-card">
+          <h3>
+            <span class="ic gold" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            Your Responsibilities
+          </h3>
+          <p>Users of CelebDossier are responsible for evaluating the accuracy, completeness, and usefulness of any information, opinion, or other content available on or through the website before relying upon it.</p>
+          <p>Visitors are strongly encouraged to independently verify important information through official sources, authorized publications, or qualified professionals whenever appropriate, particularly when making decisions that may have significant consequences.</p>
+        </div>
+      </section>
+
+      <hr class="dc-divider">
+
+      <!-- 12 · Changes to This Disclaimer -->
+      <section class="dc-section" id="changes" aria-labelledby="h-changes">
+        <div class="dc-section-head">
+          <span class="pip" aria-hidden="true"></span>
+          <h2 id="h-changes">Changes to This Disclaimer</h2>
+        </div>
+        <div class="dc-text">
+          <p>This Disclaimer may be updated periodically to reflect website improvements, changes in applicable legal requirements, or policy updates. CelebDossier reserves the right to modify any part of this Disclaimer at any time without prior notice.</p>
+          <p>Any updates to this Disclaimer become effective immediately upon publication on this page unless otherwise stated. Your continued use of CelebDossier after any changes constitutes your acceptance of the revised Disclaimer.</p>
+          <p>Visitors are encouraged to review this page regularly to stay informed of any updates or changes.</p>
+        </div>
+      </section>
+
+      <hr class="dc-divider">
+
+      <!-- 13 · Contact Us CTA -->
+      <section class="dc-section" id="contact" aria-labelledby="h-contact">
+        <div class="dc-cta">
+          <h2 id="h-contact">Contact Us</h2>
+          <p>If you have questions regarding this Disclaimer or believe any information on CelebDossier requires correction, please contact us through our Contact page.</p>
+          <a class="btn btn-primary" href="/contact-us" id="dc-contact-btn">Contact Us</a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <a class="logo" href="/" style="margin-bottom:12px;">
+          <span class="dot">CD</span><span>Celeb<b>Dossier</b></span>
+        </a>
+        <p>An original entertainment knowledge base. Evergreen biographies, movie pages, TV guides, and award coverage, written to stay useful for years.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Categories</h4>
+        <a href="/actors">Actors</a>
+        <a href="/actresses">Actresses</a>
+        <a href="/directors">Directors</a>
+        <a href="/producers">Producers</a>
+        <a href="/writers">Writers</a>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="/movies">Movies</a>
+        <a href="/television">Television</a>
+        <a href="/awards">Awards</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="/about-us">About Us</a>
+        <a href="/contact-us">Contact Us</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/disclaimer">Disclaimer</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 CelebDossier.com. All rights reserved.</span>
+      <span>Made for entertainment fans worldwide.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Dynamic "Last Updated" date
+  (function() {
+    var el = document.getElementById('update-date');
+    if (el) {
+      var d = new Date();
+      var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      el.textContent = months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+      el.setAttribute('datetime', d.toISOString().slice(0,10));
+    }
+  })();
+
+  // Mobile ToC toggle
+  (function() {
+    var btn = document.getElementById('toc-toggle');
+    var list = document.getElementById('toc-mobile-list');
+    if (btn && list) {
+      btn.addEventListener('click', function() {
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        list.classList.toggle('open');
+      });
+      list.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+          btn.setAttribute('aria-expanded', 'false');
+          list.classList.remove('open');
+        });
+      });
+    }
+  })();
+
+  // Sticky ToC active state tracking
+  (function() {
+    var tocLinks = document.querySelectorAll('.toc a[data-section]');
+    if (!tocLinks.length) return;
+    var sections = [];
+    tocLinks.forEach(function(link) {
+      var id = link.getAttribute('data-section');
+      var sec = document.getElementById(id);
+      if (sec) sections.push({ id: id, el: sec, link: link });
+    });
+
+    function updateActive() {
+      var scrollTop = window.scrollY + 140;
+      var current = null;
+      for (var i = sections.length - 1; i >= 0; i--) {
+        if (sections[i].el.offsetTop <= scrollTop) {
+          current = sections[i]; break;
+        }
+      }
+      tocLinks.forEach(function(l) { l.classList.remove('active'); });
+      if (current) current.link.classList.add('active');
+    }
+
+    var ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(function() { updateActive(); ticking = false; });
+        ticking = true;
+      }
+    }, { passive: true });
+    updateActive();
+  })();
+</script>
+
+</body>
+</html>
