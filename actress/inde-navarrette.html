@@ -234,7 +234,7 @@
 
   /* ===== SHARED SITE CHROME (matches homepage header & footer) ===== */
   .site-topbar { background:#0a0812; border-bottom:1px solid #302748; font-size:0.82rem; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height:1.6; }
-  .site-topbar .site-shell { display:flex; justify-content:space-between; align-items:center; height:40px; gap:14px; flex-wrap:wrap; }
+  .site-topbar .site-shell { display:flex; justify-content:space-between; align-items:center; min-height:40px; padding-top:8px; padding-bottom:8px; gap:14px; flex-wrap:wrap; }
   .site-topbar nav { display:flex; gap:18px; }
   .site-topbar a { color:#a79fc6; text-decoration:none; }
   .site-topbar a:hover { color:#f6c453; text-decoration:none; }
@@ -264,7 +264,7 @@
   .site-foot-bottom { border-top:1px solid #302748; margin-top:30px; padding-top:20px; color:#a79fc6; font-size:0.82rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
 
   @media (max-width:860px) {
-    .site-primary { position:fixed; inset:106px 0 auto 0; flex-direction:column; align-items:stretch; gap:2px; background:#141022; border-bottom:1px solid #302748; padding:12px 20px 20px; transform:translateY(-140%); transition:transform 0.25s ease; box-shadow:0 20px 40px rgba(0,0,0,0.5); z-index:49; }
+    .site-primary { position:absolute; top:100%; left:0; right:0; flex-direction:column; align-items:stretch; gap:2px; background:#141022; border-bottom:1px solid #302748; padding:12px 20px 20px; transform:translateY(-140%); transition:transform 0.25s ease; box-shadow:0 20px 40px rgba(0,0,0,0.5); z-index:49; }
     .site-primary a { padding:12px; border-radius:10px; }
     .site-menu-toggle:checked ~ .site-primary { transform:translateY(0); }
     .site-menu-btn { display:flex; }
