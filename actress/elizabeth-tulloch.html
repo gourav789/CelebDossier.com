@@ -137,17 +137,17 @@
   }
   .hero-img {
     width: 100%;
-    aspect-ratio: 4 / 3;
-    background: rgba(255,255,255,0.15);
-    border: 2px dashed rgba(255,255,255,0.55);
     border-radius: var(--radius);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 0.9rem;
-    padding: 12px;
     margin: 0;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  }
+  .hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 16 / 10;
   }
   .hero-meta {
     list-style: none;
@@ -388,9 +388,8 @@
           <li><strong>Known For:</strong> Superman &amp; Lois, Grimm, The Artist</li>
         </ul>
       </div>
-      <figure class="hero-img" aria-label="Featured image placeholder for Elizabeth Tulloch">
-        <img src="" alt="Elizabeth Tulloch portrait" title="Elizabeth Tulloch" style="display:none;">
-        <span>[ Featured Image Placeholder &mdash; Elizabeth Tulloch portrait ]</span>
+      <figure class="hero-img" aria-label="Featured image of Elizabeth Tulloch">
+        <img src="../actress images/elizabeth tulloch.jpg" alt="Elizabeth Tulloch">
       </figure>
     </div>
   </div>

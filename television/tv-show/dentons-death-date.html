@@ -153,8 +153,10 @@
   .poster {
     width: 100%; max-width: 300px; margin: 0 auto; aspect-ratio: 2 / 3; border-radius: 14px;
     background: linear-gradient(160deg, #2b2350, #17122a); border: 1px solid var(--line);
-    display: flex; align-items: center; justify-content: center; text-align: center; color: var(--muted);
-    font-size: 0.85rem; padding: 16px; box-shadow: 0 24px 50px rgba(0,0,0,0.45);
+    box-shadow: 0 24px 50px rgba(0,0,0,0.45); overflow: hidden;
+  }
+  .poster img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
   }
   .hero-body .eyebrow { display:inline-block; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); border:1px solid var(--line); padding:5px 12px; border-radius:999px; margin-bottom:14px; }
   .hero-body h1 { font-size: 2.1rem; line-height: 1.12; margin: 0 0 10px; letter-spacing: -0.02em; }
@@ -308,7 +310,9 @@
 <section class="show-hero">
   <div class="wrap">
     <div class="hero-grid">
-      <figure class="poster" aria-label="Denton's Death Date poster placeholder">[ Poster Placeholder &mdash; Denton's Death Date key art ]</figure>
+      <figure class="poster" aria-label="Poster of Denton's Death Date">
+        <img src="../../television image/Denton's Death Date.jpeg" alt="Denton's Death Date Poster">
+      </figure>
       <div class="hero-body">
         <span class="eyebrow">TV Series &middot; 2019 &middot; <a href="/company/snapchat" style="color: inherit; text-decoration: none;">Snapchat</a></span>
         <h1><span class="grad">Denton's Death Date</span></h1>
